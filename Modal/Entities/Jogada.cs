@@ -1,15 +1,14 @@
 ﻿using System.ComponentModel.DataAnnotations;
-
+using System.Drawing.Text;
 
 namespace Jogo_Quiz.Modal.Entities
 {
-	internal class Jogada : BaseModel
+	public class Jogada : BaseModel
 	{
 		[Key]
-		public int JogadaID { get; set; }
-		public string? Ponto { get; set; }
-
-		public virtual Jogador Jogador { get; set; }
-		public virtual Pergunta Pergunta { get; set; } 
+        private int JogadaID { get; set; }
+		private string? Ponto { get; set; }
+		private Jogador Jogador { get; set; }
+		private Pergunta Pergunta { get; set; } 
 	}
 }

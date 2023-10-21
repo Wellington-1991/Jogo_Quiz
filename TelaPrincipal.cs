@@ -38,7 +38,7 @@ namespace Jogo_Quiz
             TelaCadastro cadastro = new TelaCadastro();
 			cadastro.ShowDialog();
 
-            using (Context ultimoJogadorCadastrado = new Context())
+            using (quizContext ultimoJogadorCadastrado = new quizContext())
 			{
 				lblCampoJogador.Text = ultimoJogadorCadastrado.jogador.ToList().Last().Nome;
 

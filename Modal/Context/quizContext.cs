@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Jogo_Quiz.Modal.ContextQuiz
 {
-	internal class Context : DbContext
+	public class quizContext : DbContext
 	{
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{

@@ -2,6 +2,7 @@ using Jogo_Quiz.Modal;
 using Jogo_Quiz.Modal.ContextQuiz;
 using Jogo_Quiz.Modal.Dao;
 using Jogo_Quiz.Modal.Entities;
+using System;
 
 namespace Jogo_Quiz
 {
@@ -13,27 +14,18 @@ namespace Jogo_Quiz
 		[STAThread]
 		static void Main()
 		{
-			using (Context c = new Context()) 
-			{
-				Jogador J = new Jogador();
-				J.Nome = "TOM";
-				J.Excluido = false;
-				//var pergunta = c.pergunta.ToList();
-				//Pergunta novaPergunta = new Pergunta();
-				//novaPergunta.PerguntaQuiz = "2 + 2";
-				//novaPergunta.DataCriacao = DateTime.Now;
-				//novaPergunta.DataAlteracao = DateTime.Now;
-				//novaPergunta.Excluido = false;
+            ApplicationConfiguration.Initialize();
 
 
-				var teste = c.SaveChanges();
+			var conexao = new quizContext();
 
-			}
-			var pergunta01 = "";
+			var criarPergunta = new PerguntaDao(conexao);
+
+
 
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
+            
 			Application.Run(new Form1());
 
 			//string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;

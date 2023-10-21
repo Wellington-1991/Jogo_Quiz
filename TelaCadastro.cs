@@ -21,7 +21,7 @@ namespace Jogo_Quiz
 
 
 
-            using (Context Jogador = new Context())
+            using (quizContext Jogador = new quizContext())
             {
                 Jogador adicionarJogador = new Jogador();
 

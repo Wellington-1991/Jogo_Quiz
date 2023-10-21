@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Jogo_Quiz.Migrations
 {
-    [DbContext(typeof(Context))]
+    [DbContext(typeof(quizContext))]
     partial class ContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

@@ -3,16 +3,16 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Jogo_Quiz.Modal.Entities
 {
-internal class Pergunta : BaseModel
+	public class Pergunta : BaseModel
 	{
 		[Key]
-		public int PerguntaID { get; set; }
+		private int PerguntaID { get; set; }
 
 		[MaxLength(255)]
-		public string? PerguntaQuiz { get; set; }
+        private string? PerguntaQuiz { get; set; }
 
-		public ICollection<Resposta>? respostas { get; set; }
+        private ICollection<Resposta>? respostas { get; set; }
 
-		public ICollection<NivelDificuldade>? nivelDificuldade { get; set; }
+        private ICollection<NivelDificuldade>? nivelDificuldade { get; set; }
 	}
 }

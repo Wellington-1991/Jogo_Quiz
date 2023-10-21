@@ -2,12 +2,12 @@
 
 namespace Jogo_Quiz.Modal.Entities
 {
-	internal class Jogador : BaseModel 
+	public class Jogador : BaseModel 
 	{
 		[Key]
-		public int JogadorID { get; set; }
+		private int JogadorID { get; set; }
 
 		[MaxLength(200)]
-		public string Nome { get; set; }
+		private string Nome { get; set; }
     }
 }
