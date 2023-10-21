@@ -40,7 +40,7 @@ namespace Jogo_Quiz
 
             using (quizContext ultimoJogadorCadastrado = new quizContext())
 			{
-				lblCampoJogador.Text = ultimoJogadorCadastrado.jogador.ToList().Last().Nome;
+				//lblCampoJogador.Text = ultimoJogadorCadastrado.jogador.ToList().Last().Nome;
 
             }
 
