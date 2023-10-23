@@ -216,7 +216,6 @@ D:\Wellington\AluraVerso\Jogo_Quiz\Jogo_Quiz\bin\Debug\net6.0-windows\runtimes\w
 D:\Wellington\AluraVerso\Jogo_Quiz\Jogo_Quiz\bin\Debug\net6.0-windows\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 D:\Wellington\AluraVerso\Jogo_Quiz\Jogo_Quiz\obj\Debug\net6.0-windows\Jogo_Quiz.csproj.AssemblyReference.cache
 D:\Wellington\AluraVerso\Jogo_Quiz\Jogo_Quiz\obj\Debug\net6.0-windows\Jogo_Quiz.TelaCadastro.resources
-D:\Wellington\AluraVerso\Jogo_Quiz\Jogo_Quiz\obj\Debug\net6.0-windows\Jogo_Quiz.Form1.resources
 D:\Wellington\AluraVerso\Jogo_Quiz\Jogo_Quiz\obj\Debug\net6.0-windows\Jogo_Quiz.csproj.GenerateResource.cache
 D:\Wellington\AluraVerso\Jogo_Quiz\Jogo_Quiz\obj\Debug\net6.0-windows\Jogo_Quiz.GeneratedMSBuildEditorConfig.editorconfig
 D:\Wellington\AluraVerso\Jogo_Quiz\Jogo_Quiz\obj\Debug\net6.0-windows\Jogo_Quiz.AssemblyInfoInputs.cache
@@ -228,3 +227,4 @@ D:\Wellington\AluraVerso\Jogo_Quiz\Jogo_Quiz\obj\Debug\net6.0-windows\refint\Jog
 D:\Wellington\AluraVerso\Jogo_Quiz\Jogo_Quiz\obj\Debug\net6.0-windows\Jogo_Quiz.pdb
 D:\Wellington\AluraVerso\Jogo_Quiz\Jogo_Quiz\obj\Debug\net6.0-windows\Jogo_Quiz.genruntimeconfig.cache
 D:\Wellington\AluraVerso\Jogo_Quiz\Jogo_Quiz\obj\Debug\net6.0-windows\ref\Jogo_Quiz.dll
+D:\Wellington\AluraVerso\Jogo_Quiz\Jogo_Quiz\obj\Debug\net6.0-windows\Jogo_Quiz.TelaPrincipal.resources

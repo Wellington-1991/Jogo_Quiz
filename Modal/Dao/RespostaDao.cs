@@ -23,9 +23,9 @@ namespace Jogo_Quiz.Modal.Dao
         {
             Resposta novasRespostas = new Resposta();
 
-            novasRespostas.RespostaQuiz = "nova";
-            novasRespostas.Verdadeiro = true;
-            novasRespostas.PerguntaID = 1;
+            //novasRespostas.RespostaQuiz = "nova";
+            //novasRespostas.Verdadeiro = true;
+            //novasRespostas.PerguntaID = 1;
             novasRespostas.DataCriacao = DateTime.Now.Date;
             novasRespostas.DataAlteracao = DateTime.Now.Date;
             novasRespostas.DataExclusao = DateTime.Now.Date;

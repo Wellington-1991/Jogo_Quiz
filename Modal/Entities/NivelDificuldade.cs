@@ -3,7 +3,7 @@
 
 namespace Jogo_Quiz.Modal.Entities
 {
-	internal class NivelDificuldade : BaseModel
+	public class NivelDificuldade : BaseModel
 	{
 		[Key]
 		public int NivelID { get; set; }

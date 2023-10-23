@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblNome = new System.Windows.Forms.Label();
+            this.lblCadatrarJogador = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.btnFinalizarCadastroJogador = new System.Windows.Forms.Button();
-            this.gpbCadastrarJogador = new System.Windows.Forms.GroupBox();
-            this.gpbCadastrarPergunta = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.rbtResposta3 = new System.Windows.Forms.RadioButton();
             this.rbtResposta2 = new System.Windows.Forms.RadioButton();
             this.rbtResposta1 = new System.Windows.Forms.RadioButton();
@@ -43,32 +44,27 @@
             this.txtNomeResposta = new System.Windows.Forms.TextBox();
             this.lblNomeResposta = new System.Windows.Forms.Label();
             this.btnFinalizarCadastroPergunta = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.gpbCadastrarJogador.SuspendLayout();
-            this.gpbCadastrarPergunta.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lblNome
+            // lblCadatrarJogador
             // 
-            this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(22, 34);
-            this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(96, 15);
-            this.lblNome.TabIndex = 0;
-            this.lblNome.Text = "Digite seu nome:";
+            this.lblCadatrarJogador.AutoSize = true;
+            this.lblCadatrarJogador.Location = new System.Drawing.Point(18, 14);
+            this.lblCadatrarJogador.Name = "lblCadatrarJogador";
+            this.lblCadatrarJogador.Size = new System.Drawing.Size(114, 15);
+            this.lblCadatrarJogador.TabIndex = 0;
+            this.lblCadatrarJogador.Text = "Cadastrar o jogador:";
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(137, 32);
+            this.txtNome.Location = new System.Drawing.Point(144, 12);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(285, 23);
             this.txtNome.TabIndex = 1;
             // 
             // btnFinalizarCadastroJogador
             // 
-            this.btnFinalizarCadastroJogador.Location = new System.Drawing.Point(440, 32);
+            this.btnFinalizarCadastroJogador.Location = new System.Drawing.Point(447, 12);
             this.btnFinalizarCadastroJogador.Name = "btnFinalizarCadastroJogador";
             this.btnFinalizarCadastroJogador.Size = new System.Drawing.Size(120, 23);
             this.btnFinalizarCadastroJogador.TabIndex = 2;
@@ -76,44 +72,37 @@
             this.btnFinalizarCadastroJogador.UseVisualStyleBackColor = true;
             this.btnFinalizarCadastroJogador.Click += new System.EventHandler(this.btnOk_Click);
             // 
-            // gpbCadastrarJogador
+            // label3
             // 
-            this.gpbCadastrarJogador.Controls.Add(this.txtNome);
-            this.gpbCadastrarJogador.Controls.Add(this.lblNome);
-            this.gpbCadastrarJogador.Controls.Add(this.btnFinalizarCadastroJogador);
-            this.gpbCadastrarJogador.Location = new System.Drawing.Point(0, 2);
-            this.gpbCadastrarJogador.Name = "gpbCadastrarJogador";
-            this.gpbCadastrarJogador.Size = new System.Drawing.Size(618, 74);
-            this.gpbCadastrarJogador.TabIndex = 3;
-            this.gpbCadastrarJogador.TabStop = false;
-            this.gpbCadastrarJogador.Text = "Cadastrar Jogador";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(458, 423);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(51, 15);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Correta?";
             // 
-            // gpbCadastrarPergunta
+            // label2
             // 
-            this.gpbCadastrarPergunta.Controls.Add(this.label3);
-            this.gpbCadastrarPergunta.Controls.Add(this.label2);
-            this.gpbCadastrarPergunta.Controls.Add(this.label1);
-            this.gpbCadastrarPergunta.Controls.Add(this.rbtResposta3);
-            this.gpbCadastrarPergunta.Controls.Add(this.rbtResposta2);
-            this.gpbCadastrarPergunta.Controls.Add(this.rbtResposta1);
-            this.gpbCadastrarPergunta.Controls.Add(this.lblResposta);
-            this.gpbCadastrarPergunta.Controls.Add(this.txtResposta1);
-            this.gpbCadastrarPergunta.Controls.Add(this.textBox3);
-            this.gpbCadastrarPergunta.Controls.Add(this.textBox4);
-            this.gpbCadastrarPergunta.Controls.Add(this.txtNomeResposta);
-            this.gpbCadastrarPergunta.Controls.Add(this.lblNomeResposta);
-            this.gpbCadastrarPergunta.Controls.Add(this.btnFinalizarCadastroPergunta);
-            this.gpbCadastrarPergunta.Location = new System.Drawing.Point(0, 77);
-            this.gpbCadastrarPergunta.Name = "gpbCadastrarPergunta";
-            this.gpbCadastrarPergunta.Size = new System.Drawing.Size(618, 175);
-            this.gpbCadastrarPergunta.TabIndex = 4;
-            this.gpbCadastrarPergunta.TabStop = false;
-            this.gpbCadastrarPergunta.Text = "Cadastrar Pergunta";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(456, 394);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(51, 15);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Correta?";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(456, 367);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 15);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Correta?";
             // 
             // rbtResposta3
             // 
             this.rbtResposta3.AutoSize = true;
-            this.rbtResposta3.Location = new System.Drawing.Point(505, 143);
+            this.rbtResposta3.Location = new System.Drawing.Point(514, 421);
             this.rbtResposta3.Name = "rbtResposta3";
             this.rbtResposta3.Size = new System.Drawing.Size(51, 19);
             this.rbtResposta3.TabIndex = 13;
@@ -124,7 +113,7 @@
             // rbtResposta2
             // 
             this.rbtResposta2.AutoSize = true;
-            this.rbtResposta2.Location = new System.Drawing.Point(506, 112);
+            this.rbtResposta2.Location = new System.Drawing.Point(513, 392);
             this.rbtResposta2.Name = "rbtResposta2";
             this.rbtResposta2.Size = new System.Drawing.Size(51, 19);
             this.rbtResposta2.TabIndex = 12;
@@ -135,7 +124,7 @@
             // rbtResposta1
             // 
             this.rbtResposta1.AutoSize = true;
-            this.rbtResposta1.Location = new System.Drawing.Point(506, 82);
+            this.rbtResposta1.Location = new System.Drawing.Point(513, 362);
             this.rbtResposta1.Name = "rbtResposta1";
             this.rbtResposta1.Size = new System.Drawing.Size(51, 19);
             this.rbtResposta1.TabIndex = 11;
@@ -146,7 +135,7 @@
             // lblResposta
             // 
             this.lblResposta.AutoSize = true;
-            this.lblResposta.Location = new System.Drawing.Point(22, 84);
+            this.lblResposta.Location = new System.Drawing.Point(29, 364);
             this.lblResposta.Name = "lblResposta";
             this.lblResposta.Size = new System.Drawing.Size(102, 15);
             this.lblResposta.TabIndex = 5;
@@ -154,28 +143,28 @@
             // 
             // txtResposta1
             // 
-            this.txtResposta1.Location = new System.Drawing.Point(137, 84);
+            this.txtResposta1.Location = new System.Drawing.Point(144, 364);
             this.txtResposta1.Name = "txtResposta1";
             this.txtResposta1.Size = new System.Drawing.Size(285, 23);
             this.txtResposta1.TabIndex = 6;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(137, 111);
+            this.textBox3.Location = new System.Drawing.Point(144, 391);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(285, 23);
             this.textBox3.TabIndex = 8;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(137, 140);
+            this.textBox4.Location = new System.Drawing.Point(144, 420);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(285, 23);
             this.textBox4.TabIndex = 10;
             // 
             // txtNomeResposta
             // 
-            this.txtNomeResposta.Location = new System.Drawing.Point(137, 32);
+            this.txtNomeResposta.Location = new System.Drawing.Point(144, 312);
             this.txtNomeResposta.Name = "txtNomeResposta";
             this.txtNomeResposta.Size = new System.Drawing.Size(285, 23);
             this.txtNomeResposta.TabIndex = 1;
@@ -183,7 +172,7 @@
             // lblNomeResposta
             // 
             this.lblNomeResposta.AutoSize = true;
-            this.lblNomeResposta.Location = new System.Drawing.Point(22, 34);
+            this.lblNomeResposta.Location = new System.Drawing.Point(29, 314);
             this.lblNomeResposta.Name = "lblNomeResposta";
             this.lblNomeResposta.Size = new System.Drawing.Size(96, 15);
             this.lblNomeResposta.TabIndex = 0;
@@ -191,7 +180,7 @@
             // 
             // btnFinalizarCadastroPergunta
             // 
-            this.btnFinalizarCadastroPergunta.Location = new System.Drawing.Point(440, 32);
+            this.btnFinalizarCadastroPergunta.Location = new System.Drawing.Point(447, 312);
             this.btnFinalizarCadastroPergunta.Name = "btnFinalizarCadastroPergunta";
             this.btnFinalizarCadastroPergunta.Size = new System.Drawing.Size(120, 23);
             this.btnFinalizarCadastroPergunta.TabIndex = 2;
@@ -199,57 +188,39 @@
             this.btnFinalizarCadastroPergunta.UseVisualStyleBackColor = true;
             this.btnFinalizarCadastroPergunta.Click += new System.EventHandler(this.btnFinalizarCadastroPergunta_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(449, 87);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 15);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Correta?";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(449, 114);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 15);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Correta?";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(449, 145);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 15);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Correta?";
-            // 
             // TelaCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(619, 365);
-            this.Controls.Add(this.gpbCadastrarPergunta);
-            this.Controls.Add(this.gpbCadastrarJogador);
+            this.ClientSize = new System.Drawing.Size(619, 450);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtNome);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblCadatrarJogador);
+            this.Controls.Add(this.rbtResposta3);
+            this.Controls.Add(this.btnFinalizarCadastroJogador);
+            this.Controls.Add(this.rbtResposta2);
+            this.Controls.Add(this.lblNomeResposta);
+            this.Controls.Add(this.rbtResposta1);
+            this.Controls.Add(this.btnFinalizarCadastroPergunta);
+            this.Controls.Add(this.lblResposta);
+            this.Controls.Add(this.txtNomeResposta);
+            this.Controls.Add(this.txtResposta1);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textBox3);
             this.Name = "TelaCadastro";
             this.Text = "y";
-            this.gpbCadastrarJogador.ResumeLayout(false);
-            this.gpbCadastrarJogador.PerformLayout();
-            this.gpbCadastrarPergunta.ResumeLayout(false);
-            this.gpbCadastrarPergunta.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private Label lblNome;
+        private Label lblCadatrarJogador;
         private TextBox txtNome;
         private Button btnFinalizarCadastroJogador;
-        private GroupBox gpbCadastrarJogador;
-        private GroupBox gpbCadastrarPergunta;
         private RadioButton rbtResposta3;
         private RadioButton rbtResposta2;
         private RadioButton rbtResposta1;

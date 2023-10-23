@@ -8,6 +8,8 @@ namespace Jogo_Quiz.Modal.Dao
     {
         private readonly quizContext _context;
 
+        private Pergunta _pergunta = new Pergunta();
+
         public PerguntaDao(quizContext context)
         {
             _context = context;
@@ -15,19 +17,26 @@ namespace Jogo_Quiz.Modal.Dao
 
         public Pergunta CriarPergunta()
         {
-            Pergunta novaPergunta = new Pergunta();
 
             //novaPergunta.PerguntaQuiz = "nova";
-            novaPergunta.DataCriacao = DateTime.Now.Date;
-            novaPergunta.DataAlteracao = DateTime.Now.Date;
-            novaPergunta.DataExclusao = DateTime.Now.Date;
-            novaPergunta.Excluido = false;
+            this._pergunta.DataCriacao = DateTime.Now.Date;
+            this._pergunta.DataAlteracao = DateTime.Now.Date;
+            this._pergunta.DataExclusao = DateTime.Now.Date;
+            this._pergunta.Excluido = false;
 
-            _context.pergunta.Add(novaPergunta);
+            _context.pergunta.Add(this._pergunta);
 
             _context.SaveChanges();
 
-            return novaPergunta;
+            return _pergunta;
+        }
+
+        public Pergunta AlterarPergunta(int perguntaID)
+        {
+
+            var alteraPergunta = _context.pergunta.Find(perguntaID);
+
+            return alteraPergunta;
         }
     }
 }

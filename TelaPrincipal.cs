@@ -1,48 +1,46 @@
 using Jogo_Quiz.Modal.ContextQuiz;
 using Jogo_Quiz.Modal.Dao;
-using Jogo_Quiz.Modal.Entities;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 
 namespace Jogo_Quiz
 {
-	public partial class Form1 : Form
+	public partial class TelaPrincipal : Form
 	{
-		public Form1()
+		private quizContext _conexao = new quizContext();
+
+		public TelaPrincipal()
 		{
 			InitializeComponent();
 		}
 
-		
-
-		public void CarregarPerguntas()
-		{
-		}
-
-		public void EditarPerguntas()
-		{
-
-		}
-
-		public void ExcluirPerguntas()
-		{
-
-		}
-
         private void BtnJogador_Click(object sender, EventArgs e)
         {
-            Button button = (Button)sender;
+			// TelaCadastro cadastro = new TelaCadastro();
+			//cadastro.ShowDialog();
 
-			var nome = button.Name;
+			
 
-            TelaCadastro cadastro = new TelaCadastro();
-			cadastro.ShowDialog();
-
-            using (quizContext ultimoJogadorCadastrado = new quizContext())
+			using (JogadorDao criarJogador = new JogadorDao(_conexao))
 			{
-				//lblCampoJogador.Text = ultimoJogadorCadastrado.jogador.ToList().Last().Nome;
+                var jogadorCadastrado = criarJogador.CriarJogador(txtGeral.Text);
+                string mensagem = "";
 
+                if (String.IsNullOrEmpty(txtGeral.Text))
+				{
+					if (jogadorCadastrado.JogadorID > 0)
+					{
+						mensagem = $"Jogador: {jogadorCadastrado} cadastrado com sucesso! ";
+					}
+					else
+					{
+						mensagem = $"Erro ao salvar o Jogador: {jogadorCadastrado} ";
+					}
+				}
+				Console.WriteLine(mensagem);
+
+                //MessageBox.Show(mensagem);
             }
+
+			
 
 			
         }
@@ -75,6 +73,13 @@ namespace Jogo_Quiz
 
 			//	Cadastrar.SaveChanges();
 			//}
+        }
+
+        private void gdvGridPrincipal_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+
+
         }
     }
 }
