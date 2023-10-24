@@ -10,6 +10,6 @@ namespace Jogo_Quiz.Modal.Entities
 		[MaxLength(200)]
 		public string Nome { get; set; }
 
-		public ICollection<Jogada> jogadas { get; set; }
+        public virtual ICollection<Jogada> Jogadas { get; set; }
     }
 }

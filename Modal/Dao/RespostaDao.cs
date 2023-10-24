@@ -31,7 +31,7 @@ namespace Jogo_Quiz.Modal.Dao
             novasRespostas.DataExclusao = DateTime.Now.Date;
             novasRespostas.Excluido = false;
 
-            _context.resposta.Add(novasRespostas);
+            _context.Resposta.Add(novasRespostas);
 
             _context.SaveChanges();
 

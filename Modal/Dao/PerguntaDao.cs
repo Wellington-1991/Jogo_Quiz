@@ -24,7 +24,7 @@ namespace Jogo_Quiz.Modal.Dao
             this._pergunta.DataExclusao = DateTime.Now.Date;
             this._pergunta.Excluido = false;
 
-            _context.pergunta.Add(this._pergunta);
+            _context.Pergunta.Add(this._pergunta);
 
             _context.SaveChanges();
 
@@ -34,7 +34,7 @@ namespace Jogo_Quiz.Modal.Dao
         public Pergunta AlterarPergunta(int perguntaID)
         {
 
-            var alteraPergunta = _context.pergunta.Find(perguntaID);
+            var alteraPergunta = _context.Pergunta.Find(perguntaID);
 
             return alteraPergunta;
         }

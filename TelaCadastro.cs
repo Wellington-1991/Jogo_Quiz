@@ -28,7 +28,7 @@ namespace Jogo_Quiz
                 //adicionarJogador.Nome = txtNome.Text;
                 adicionarJogador.DataCriacao = DateTime.Now;
 
-                Jogador.jogador.Add(adicionarJogador);
+                Jogador.Jogador.Add(adicionarJogador);
 
                 Jogador.SaveChanges();
             }

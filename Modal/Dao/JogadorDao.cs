@@ -24,7 +24,7 @@ namespace Jogo_Quiz.Modal.Dao
                 _jogador.DataExclusao = DateTime.Now.Date;
                 _jogador.Excluido = false;
 
-                _context.jogador.Add(_jogador);
+                _context.Jogador.Add(_jogador);
 
                 _context.SaveChanges();
 
@@ -42,7 +42,7 @@ namespace Jogo_Quiz.Modal.Dao
 
         public List<Jogador> ListarJogador()
         {
-            var listaJogador = _context.jogador.ToList();            
+            var listaJogador = _context.Jogador.ToList();            
             
             return listaJogador;
         }

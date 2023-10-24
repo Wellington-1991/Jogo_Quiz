@@ -42,10 +42,10 @@ namespace Jogo_Quiz.Migrations
                     b.Property<bool>("Excluido")
                         .HasColumnType("bit");
 
-                    b.Property<int>("JogadorID")
+                    b.Property<int?>("JogadorID")
                         .HasColumnType("int");
 
-                    b.Property<int>("PerguntaID")
+                    b.Property<int>("NivelID")
                         .HasColumnType("int");
 
                     b.Property<int>("Ponto")
@@ -55,9 +55,10 @@ namespace Jogo_Quiz.Migrations
 
                     b.HasIndex("JogadorID");
 
-                    b.HasIndex("PerguntaID");
+                    b.HasIndex("NivelID")
+                        .IsUnique();
 
-                    b.ToTable("jogada");
+                    b.ToTable("Jogada");
                 });
 
             modelBuilder.Entity("Jogo_Quiz.Modal.Entities.Jogador", b =>
@@ -87,7 +88,7 @@ namespace Jogo_Quiz.Migrations
 
                     b.HasKey("JogadorID");
 
-                    b.ToTable("jogador");
+                    b.ToTable("Jogador");
                 });
 
             modelBuilder.Entity("Jogo_Quiz.Modal.Entities.NivelDificuldade", b =>
@@ -113,14 +114,9 @@ namespace Jogo_Quiz.Migrations
                     b.Property<int>("Nivel")
                         .HasColumnType("int");
 
-                    b.Property<int?>("PerguntaID")
-                        .HasColumnType("int");
-
                     b.HasKey("NivelID");
 
-                    b.HasIndex("PerguntaID");
-
-                    b.ToTable("nivel");
+                    b.ToTable("Nivel");
                 });
 
             modelBuilder.Entity("Jogo_Quiz.Modal.Entities.Pergunta", b =>
@@ -143,13 +139,19 @@ namespace Jogo_Quiz.Migrations
                     b.Property<bool>("Excluido")
                         .HasColumnType("bit");
 
+                    b.Property<int>("NivelID")
+                        .HasColumnType("int");
+
                     b.Property<string>("PerguntaQuiz")
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
                     b.HasKey("PerguntaID");
 
-                    b.ToTable("pergunta");
+                    b.HasIndex("NivelID")
+                        .IsUnique();
+
+                    b.ToTable("Pergunta");
                 });
 
             modelBuilder.Entity("Jogo_Quiz.Modal.Entities.Resposta", b =>
@@ -172,7 +174,7 @@ namespace Jogo_Quiz.Migrations
                     b.Property<bool>("Excluido")
                         .HasColumnType("bit");
 
-                    b.Property<int?>("NivelID")
+                    b.Property<int>("NivelID")
                         .HasColumnType("int");
 
                     b.Property<int?>("PerguntaID")
@@ -187,64 +189,76 @@ namespace Jogo_Quiz.Migrations
 
                     b.HasKey("RespostaID");
 
-                    b.HasIndex("NivelID");
+                    b.HasIndex("NivelID")
+                        .IsUnique();
 
                     b.HasIndex("PerguntaID");
 
-                    b.ToTable("resposta");
+                    b.ToTable("Resposta");
                 });
 
             modelBuilder.Entity("Jogo_Quiz.Modal.Entities.Jogada", b =>
                 {
                     b.HasOne("Jogo_Quiz.Modal.Entities.Jogador", "Jogador")
-                        .WithMany("jogadas")
-                        .HasForeignKey("JogadorID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .WithMany("Jogadas")
+                        .HasForeignKey("JogadorID");
 
-                    b.HasOne("Jogo_Quiz.Modal.Entities.Pergunta", "Pergunta")
-                        .WithMany()
-                        .HasForeignKey("PerguntaID")
+                    b.HasOne("Jogo_Quiz.Modal.Entities.NivelDificuldade", "nivel")
+                        .WithOne("Jogada")
+                        .HasForeignKey("Jogo_Quiz.Modal.Entities.Jogada", "NivelID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Jogador");
 
-                    b.Navigation("Pergunta");
+                    b.Navigation("nivel");
                 });
 
-            modelBuilder.Entity("Jogo_Quiz.Modal.Entities.NivelDificuldade", b =>
+            modelBuilder.Entity("Jogo_Quiz.Modal.Entities.Pergunta", b =>
                 {
-                    b.HasOne("Jogo_Quiz.Modal.Entities.Pergunta", "pergunta")
-                        .WithMany("nivelDificuldade")
-                        .HasForeignKey("PerguntaID");
+                    b.HasOne("Jogo_Quiz.Modal.Entities.NivelDificuldade", "Nivel")
+                        .WithOne("Pergunta")
+                        .HasForeignKey("Jogo_Quiz.Modal.Entities.Pergunta", "NivelID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.Navigation("pergunta");
+                    b.Navigation("Nivel");
                 });
 
             modelBuilder.Entity("Jogo_Quiz.Modal.Entities.Resposta", b =>
                 {
                     b.HasOne("Jogo_Quiz.Modal.Entities.NivelDificuldade", "Nivel")
-                        .WithMany()
-                        .HasForeignKey("NivelID");
+                        .WithOne("Resposta")
+                        .HasForeignKey("Jogo_Quiz.Modal.Entities.Resposta", "NivelID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.HasOne("Jogo_Quiz.Modal.Entities.Pergunta", "pergunta")
-                        .WithMany()
+                    b.HasOne("Jogo_Quiz.Modal.Entities.Pergunta", "Pergunta")
+                        .WithMany("Resposta")
                         .HasForeignKey("PerguntaID");
 
                     b.Navigation("Nivel");
 
-                    b.Navigation("pergunta");
+                    b.Navigation("Pergunta");
                 });
 
             modelBuilder.Entity("Jogo_Quiz.Modal.Entities.Jogador", b =>
                 {
-                    b.Navigation("jogadas");
+                    b.Navigation("Jogadas");
+                });
+
+            modelBuilder.Entity("Jogo_Quiz.Modal.Entities.NivelDificuldade", b =>
+                {
+                    b.Navigation("Jogada");
+
+                    b.Navigation("Pergunta");
+
+                    b.Navigation("Resposta");
                 });
 
             modelBuilder.Entity("Jogo_Quiz.Modal.Entities.Pergunta", b =>
                 {
-                    b.Navigation("nivelDificuldade");
+                    b.Navigation("Resposta");
                 });
 #pragma warning restore 612, 618
         }

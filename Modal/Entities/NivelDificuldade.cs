@@ -8,6 +8,11 @@ namespace Jogo_Quiz.Modal.Entities
 		[Key]
 		public int NivelID { get; set; }
 		public int Nivel { get; set; }
-        public Pergunta? pergunta { get; set; }
+
+		public virtual Jogada? Jogada { get; set; }
+
+        public virtual Pergunta? Pergunta { get; set; }
+
+        public virtual Resposta? Resposta { get; set; }
     }
 }
