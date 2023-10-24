@@ -31,7 +31,7 @@ namespace Jogo_Quiz
 
                 Jogada jogada = new Jogada();
 				jogada.Ponto = 0;
-				//jogada.nivel = nivel[0].NivelID;
+				jogada.nivel = nivel[0];
 				jogada.Jogador = jogador;
 				quizDao.Jogada.Add(jogada);
 
