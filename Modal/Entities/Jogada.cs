@@ -11,7 +11,6 @@ namespace Jogo_Quiz.Modal.Entities
 
 		public virtual Jogador? Jogador { get; set; }
 
-		public int NivelID { get; set; }
         public virtual NivelDificuldade? nivel { get; set; }
 	}
 }

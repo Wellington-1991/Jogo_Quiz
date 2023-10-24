@@ -51,7 +51,7 @@ namespace Jogo_Quiz.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Ponto = table.Column<int>(type: "int", nullable: false),
                     JogadorID = table.Column<int>(type: "int", nullable: true),
-                    NivelID = table.Column<int>(type: "int", nullable: false),
+                    NivelID = table.Column<int>(type: "int", nullable: true),
                     DataCriacao = table.Column<DateTime>(type: "datetime2", nullable: true),
                     DataExclusao = table.Column<DateTime>(type: "datetime2", nullable: true),
                     DataAlteracao = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -69,8 +69,7 @@ namespace Jogo_Quiz.Migrations
                         name: "FK_Jogada_Nivel_NivelID",
                         column: x => x.NivelID,
                         principalTable: "Nivel",
-                        principalColumn: "NivelID",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "NivelID");
                 });
 
             migrationBuilder.CreateTable(
@@ -136,8 +135,7 @@ namespace Jogo_Quiz.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Jogada_NivelID",
                 table: "Jogada",
-                column: "NivelID",
-                unique: true);
+                column: "NivelID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Pergunta_NivelID",

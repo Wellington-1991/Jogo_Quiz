@@ -20,26 +20,24 @@ namespace Jogo_Quiz
 
 
 
-			//using (quizContext quizDao = new quizContext())
-			//{
-			//	Jogador jogador = new Jogador();
-			//	jogador.Nome = "wellington";
-			//	jogador.Excluido = false;
-			//	quizDao.Add(jogador);
+			using (quizContext quizDao = new quizContext())
+			{
+				Jogador jogador = new Jogador();
+				jogador.Nome = "wellington";
+				jogador.Excluido = false;
+				quizDao.Add(jogador);
 
-			//	Jogada jogada = new Jogada();
-			//	jogada.Ponto = 0;
-			//	jogada.Jogador = jogador;
+				var nivel = quizDao.Nivel.ToList();
+
+                Jogada jogada = new Jogada();
+				jogada.Ponto = 0;
+				//jogada.nivel = nivel[0].NivelID;
+				jogada.Jogador = jogador;
+				quizDao.Jogada.Add(jogada);
 
 
-
-
-			//	quizD
-
-
-			//	quizDao. .SaveChanges(jogada);
-			//}
-
+				quizDao.SaveChanges();
+			}
 
 
 
@@ -52,7 +50,8 @@ namespace Jogo_Quiz
 
 
 
-            Application.Run(new TelaPrincipal());
+
+			Application.Run(new TelaPrincipal());
 
 			//string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
 

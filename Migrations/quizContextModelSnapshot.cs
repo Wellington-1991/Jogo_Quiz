@@ -45,7 +45,7 @@ namespace Jogo_Quiz.Migrations
                     b.Property<int?>("JogadorID")
                         .HasColumnType("int");
 
-                    b.Property<int>("NivelID")
+                    b.Property<int?>("NivelID")
                         .HasColumnType("int");
 
                     b.Property<int>("Ponto")
@@ -55,8 +55,7 @@ namespace Jogo_Quiz.Migrations
 
                     b.HasIndex("JogadorID");
 
-                    b.HasIndex("NivelID")
-                        .IsUnique();
+                    b.HasIndex("NivelID");
 
                     b.ToTable("Jogada");
                 });
@@ -204,10 +203,8 @@ namespace Jogo_Quiz.Migrations
                         .HasForeignKey("JogadorID");
 
                     b.HasOne("Jogo_Quiz.Modal.Entities.NivelDificuldade", "nivel")
-                        .WithOne("Jogada")
-                        .HasForeignKey("Jogo_Quiz.Modal.Entities.Jogada", "NivelID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .WithMany("Jogada")
+                        .HasForeignKey("NivelID");
 
                     b.Navigation("Jogador");
 

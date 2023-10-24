@@ -9,7 +9,7 @@ namespace Jogo_Quiz.Modal.Entities
 		public int NivelID { get; set; }
 		public int Nivel { get; set; }
 
-		public virtual Jogada? Jogada { get; set; }
+		public virtual ICollection<Jogada>? Jogada { get; set; }
 
         public virtual Pergunta? Pergunta { get; set; }
 
