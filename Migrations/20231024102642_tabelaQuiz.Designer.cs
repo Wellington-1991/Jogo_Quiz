@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Jogo_Quiz.Migrations
 {
     [DbContext(typeof(quizContext))]
-    [Migration("20231024020012_tabelaQuizPergunta")]
-    partial class tabelaQuizPergunta
+    [Migration("20231024102642_tabelaQuiz")]
+    partial class tabelaQuiz
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

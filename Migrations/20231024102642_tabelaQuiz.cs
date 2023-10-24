@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Jogo_Quiz.Migrations
 {
-    public partial class tabelaQuizPergunta : Migration
+    public partial class tabelaQuiz : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

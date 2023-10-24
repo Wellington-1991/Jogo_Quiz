@@ -2217,23 +2217,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Wellington\\.nuget\\packages\\": {},
+    "C:\\Users\\wellington.rafael\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Wellington\\AluraVerso\\Jogo_Quiz\\Jogo_Quiz\\Jogo_Quiz.csproj",
+      "projectUniqueName": "C:\\Users\\wellington.rafael\\Documents\\Wellington\\CURSO_ALURA\\Jogo_Quiz\\Jogo_Quiz.csproj",
       "projectName": "Jogo_Quiz",
-      "projectPath": "D:\\Wellington\\AluraVerso\\Jogo_Quiz\\Jogo_Quiz\\Jogo_Quiz.csproj",
-      "packagesPath": "C:\\Users\\Wellington\\.nuget\\packages\\",
-      "outputPath": "D:\\Wellington\\AluraVerso\\Jogo_Quiz\\Jogo_Quiz\\obj\\",
+      "projectPath": "C:\\Users\\wellington.rafael\\Documents\\Wellington\\CURSO_ALURA\\Jogo_Quiz\\Jogo_Quiz.csproj",
+      "packagesPath": "C:\\Users\\wellington.rafael\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\wellington.rafael\\Documents\\Wellington\\CURSO_ALURA\\Jogo_Quiz\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Wellington\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\wellington.rafael\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -2298,7 +2298,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }
