@@ -8,8 +8,8 @@ namespace Jogo_Quiz.Modal.Entities
         public int JogadorID { get; set; }
 
 		[MaxLength(200)]
-		public string Nome { get; set; }
+		public string? Nome { get; set; }
 
-        public virtual ICollection<Jogada> Jogadas { get; set; }
+        public virtual ICollection<Jogada>? Jogadas { get; set; }
     }
 }

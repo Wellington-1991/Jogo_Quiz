@@ -15,5 +15,7 @@ namespace Jogo_Quiz.Modal.ContextQuiz
         public DbSet<NivelDificuldade> Nivel { get; set; }
         public DbSet<Pergunta> Pergunta { get; set; }
         public DbSet<Resposta> Resposta { get; set; }
-    }
+
+		public DbSet<PerguntaResposta> PerguntaResposta { get; set; }
+	}
 }
