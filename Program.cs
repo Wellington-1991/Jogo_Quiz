@@ -27,7 +27,7 @@ namespace Jogo_Quiz
 				//jogador.Excluido = false;
 				//quizDao.Add(jogador);
 
-				var nivel = quizDao.Nivel.ToList();
+				var nivel = quizDao.Nivel.ToList().Select(n => n.NivelID).ToList();
 				//var pergunta = quizDao.Pergunta.ToList();
 
 				//Jogada jogada = new Jogada();
@@ -37,34 +37,41 @@ namespace Jogo_Quiz
 				//quizDao.Jogada.Add(jogada);
 
 
-				//Pergunta pergunta = new Pergunta();
-				//pergunta.PerguntaQuiz = "O que é, o que é, clara e saldaga, tem sabor de mar pesa uma tonelada?";
-				//pergunta.Nivel = nivel[0];
-				//pergunta.DataCriacao = DateTime.Now;
-				//pergunta.Excluido = false;
-				//quizDao.Pergunta.Add(pergunta);
+				Pergunta pergunta = new Pergunta();
+				pergunta.PerguntaQuiz = "O que é, o que é, clara e saldaga, tem sabor de mar, pesa uma tonelada?";
+				pergunta.NivelID = nivel[0];
+				pergunta.DataCriacao = DateTime.Now;
+				pergunta.Excluido = false;
+				quizDao.Pergunta.Add(pergunta);
 
-				//Resposta resposta = new Resposta();
-				//resposta.RespostaQuiz = "Água";
-				//resposta.Verdadeiro = false;
-				//resposta.Nivel = nivel[0];
-				//resposta.DataCriacao = DateTime.Now;
-				//resposta.Excluido = false;
-				//quizDao.Resposta.Add(resposta);
+				quizDao.SaveChanges();
 
-				//Resposta resposta0 = new Resposta();
-				//resposta0.RespostaQuiz = "Lágrimas";
-				//resposta0.Verdadeiro = false;
-				//resposta0.Nivel = nivel[0];
-				//resposta0.DataCriacao = DateTime.Now;
-				//resposta0.Excluido = false;
-				//quizDao.Resposta.Add(resposta0);
+				Resposta resposta = new Resposta();
+				resposta.RespostaQuiz = "Água";
+				resposta.Verdadeiro = false;
+				resposta.PerguntaID = pergunta.PerguntaID;
+				resposta.NivelID = nivel[0];
+				resposta.DataCriacao = DateTime.Now;
+				resposta.Excluido = false;
+				quizDao.Resposta.Add(resposta);
 
-				//PerguntaResposta perguntaResposta = new PerguntaResposta();
-				//perguntaResposta.Pergunta = pergunta;
-				//perguntaResposta.Resposta = resposta;
-				//perguntaResposta.Resposta = resposta0;
-				//quizDao.PerguntaResposta.Add(perguntaResposta);
+				Resposta resposta0 = new Resposta();
+				resposta0.RespostaQuiz = "Lágrimas";
+				resposta0.Verdadeiro = true;
+				resposta0.PerguntaID = pergunta.PerguntaID;
+				resposta0.NivelID = nivel[0];
+				resposta0.DataCriacao = DateTime.Now;
+				resposta0.Excluido = false;
+				quizDao.Resposta.Add(resposta0);
+
+				Resposta resposta01 = new Resposta();
+				resposta01.RespostaQuiz = "Vinho";
+				resposta01.Verdadeiro = false;
+				resposta01.PerguntaID = pergunta.PerguntaID;
+				resposta01.NivelID = nivel[0];
+				resposta01.DataCriacao = DateTime.Now;
+				resposta01.Excluido = false;
+				quizDao.Resposta.Add(resposta01);
 
 
 				quizDao.SaveChanges();
