@@ -37,34 +37,34 @@ namespace Jogo_Quiz
 				//quizDao.Jogada.Add(jogada);
 
 
-				Pergunta pergunta = new Pergunta();
-				pergunta.PerguntaQuiz = "O que é, o que é, clara e saldaga, tem sabor de mar pesa uma tonelada?";
-				pergunta.Nivel = nivel[0];
-				pergunta.DataCriacao = DateTime.Now;
-				pergunta.Excluido = false;
-				quizDao.Pergunta.Add(pergunta);
+				//Pergunta pergunta = new Pergunta();
+				//pergunta.PerguntaQuiz = "O que é, o que é, clara e saldaga, tem sabor de mar pesa uma tonelada?";
+				//pergunta.Nivel = nivel[0];
+				//pergunta.DataCriacao = DateTime.Now;
+				//pergunta.Excluido = false;
+				//quizDao.Pergunta.Add(pergunta);
 
-				Resposta resposta = new Resposta();
-				resposta.RespostaQuiz = "Água";
-				resposta.Verdadeiro = false;
-				resposta.Nivel = nivel[0];
-				resposta.DataCriacao = DateTime.Now;
-				resposta.Excluido = false;
-				quizDao.Resposta.Add(resposta);
+				//Resposta resposta = new Resposta();
+				//resposta.RespostaQuiz = "Água";
+				//resposta.Verdadeiro = false;
+				//resposta.Nivel = nivel[0];
+				//resposta.DataCriacao = DateTime.Now;
+				//resposta.Excluido = false;
+				//quizDao.Resposta.Add(resposta);
 
-				Resposta resposta0 = new Resposta();
-				resposta0.RespostaQuiz = "Lágrimas";
-				resposta0.Verdadeiro = false;
-				resposta0.Nivel = nivel[0];
-				resposta0.DataCriacao = DateTime.Now;
-				resposta0.Excluido = false;
-				quizDao.Resposta.Add(resposta0);
+				//Resposta resposta0 = new Resposta();
+				//resposta0.RespostaQuiz = "Lágrimas";
+				//resposta0.Verdadeiro = false;
+				//resposta0.Nivel = nivel[0];
+				//resposta0.DataCriacao = DateTime.Now;
+				//resposta0.Excluido = false;
+				//quizDao.Resposta.Add(resposta0);
 
-				PerguntaResposta perguntaResposta = new PerguntaResposta();
-				perguntaResposta.Pergunta = pergunta;
-				perguntaResposta.Resposta = resposta;
-				perguntaResposta.Resposta = resposta0;
-				quizDao.PerguntaResposta.Add(perguntaResposta);
+				//PerguntaResposta perguntaResposta = new PerguntaResposta();
+				//perguntaResposta.Pergunta = pergunta;
+				//perguntaResposta.Resposta = resposta;
+				//perguntaResposta.Resposta = resposta0;
+				//quizDao.PerguntaResposta.Add(perguntaResposta);
 
 
 				quizDao.SaveChanges();

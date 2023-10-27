@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Jogo_Quiz.Migrations
 {
-    public partial class CriandoTabelaQuiz : Migration
+    public partial class CriacaoTabelasQuiz : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -82,6 +82,7 @@ namespace Jogo_Quiz.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     PerguntaQuiz = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
                     NivelID = table.Column<int>(type: "int", nullable: false),
+                    NivelDificuldadeNivelID = table.Column<int>(type: "int", nullable: true),
                     DataCriacao = table.Column<DateTime>(type: "datetime2", nullable: true),
                     DataExclusao = table.Column<DateTime>(type: "datetime2", nullable: true),
                     DataAlteracao = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -91,11 +92,10 @@ namespace Jogo_Quiz.Migrations
                 {
                     table.PrimaryKey("PK_Pergunta", x => x.PerguntaID);
                     table.ForeignKey(
-                        name: "FK_Pergunta_Nivel_NivelID",
-                        column: x => x.NivelID,
+                        name: "FK_Pergunta_Nivel_NivelDificuldadeNivelID",
+                        column: x => x.NivelDificuldadeNivelID,
                         principalTable: "Nivel",
-                        principalColumn: "NivelID",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "NivelID");
                 });
 
             migrationBuilder.CreateTable(
@@ -107,6 +107,7 @@ namespace Jogo_Quiz.Migrations
                     RespostaQuiz = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
                     Verdadeiro = table.Column<bool>(type: "bit", nullable: true),
                     NivelID = table.Column<int>(type: "int", nullable: false),
+                    PerguntaID = table.Column<int>(type: "int", nullable: false),
                     DataCriacao = table.Column<DateTime>(type: "datetime2", nullable: true),
                     DataExclusao = table.Column<DateTime>(type: "datetime2", nullable: true),
                     DataAlteracao = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -121,30 +122,12 @@ namespace Jogo_Quiz.Migrations
                         principalTable: "Nivel",
                         principalColumn: "NivelID",
                         onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "PerguntaResposta",
-                columns: table => new
-                {
-                    PerguntaRespostaID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    PerguntaID = table.Column<int>(type: "int", nullable: true),
-                    RespostaID = table.Column<int>(type: "int", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_PerguntaResposta", x => x.PerguntaRespostaID);
                     table.ForeignKey(
-                        name: "FK_PerguntaResposta_Pergunta_PerguntaID",
+                        name: "FK_Resposta_Pergunta_PerguntaID",
                         column: x => x.PerguntaID,
                         principalTable: "Pergunta",
-                        principalColumn: "PerguntaID");
-                    table.ForeignKey(
-                        name: "FK_PerguntaResposta_Resposta_RespostaID",
-                        column: x => x.RespostaID,
-                        principalTable: "Resposta",
-                        principalColumn: "RespostaID");
+                        principalColumn: "PerguntaID",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
@@ -158,26 +141,19 @@ namespace Jogo_Quiz.Migrations
                 column: "NivelID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Pergunta_NivelID",
+                name: "IX_Pergunta_NivelDificuldadeNivelID",
                 table: "Pergunta",
-                column: "NivelID",
-                unique: true);
-
-            migrationBuilder.CreateIndex(
-                name: "IX_PerguntaResposta_PerguntaID",
-                table: "PerguntaResposta",
-                column: "PerguntaID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_PerguntaResposta_RespostaID",
-                table: "PerguntaResposta",
-                column: "RespostaID");
+                column: "NivelDificuldadeNivelID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Resposta_NivelID",
                 table: "Resposta",
-                column: "NivelID",
-                unique: true);
+                column: "NivelID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Resposta_PerguntaID",
+                table: "Resposta",
+                column: "PerguntaID");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -186,16 +162,13 @@ namespace Jogo_Quiz.Migrations
                 name: "Jogada");
 
             migrationBuilder.DropTable(
-                name: "PerguntaResposta");
+                name: "Resposta");
 
             migrationBuilder.DropTable(
                 name: "Jogador");
 
             migrationBuilder.DropTable(
                 name: "Pergunta");
-
-            migrationBuilder.DropTable(
-                name: "Resposta");
 
             migrationBuilder.DropTable(
                 name: "Nivel");

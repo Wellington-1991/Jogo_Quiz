@@ -11,8 +11,8 @@ namespace Jogo_Quiz.Modal.Entities
 
 		public virtual ICollection<Jogada>? Jogada { get; set; }
 
-        public virtual Pergunta? Pergunta { get; set; }
+        public virtual ICollection<Pergunta>? Pergunta { get; set; }
 
-        public virtual Resposta? Resposta { get; set; }
+        public virtual ICollection<Resposta>? Resposta { get; set; }
     }
 }

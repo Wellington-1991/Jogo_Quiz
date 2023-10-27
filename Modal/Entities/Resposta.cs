@@ -1,5 +1,6 @@
 ﻿
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Jogo_Quiz.Modal.Entities
 {
@@ -15,7 +16,8 @@ namespace Jogo_Quiz.Modal.Entities
         public int NivelID { get; set; }
         public virtual NivelDificuldade? Nivel { get; set; }
 
-		public virtual ICollection<PerguntaResposta>? PerguntaResposta { get; set; }
+		public int PerguntaID { get; set; }
+		public virtual Pergunta? Pergunta { get; set; }
 		
 	}
 }
