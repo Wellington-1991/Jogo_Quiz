@@ -1,5 +1,6 @@
 using Jogo_Quiz.Modal.ContextQuiz;
 using Jogo_Quiz.Modal.Dao;
+using Jogo_Quiz.Modal.Entities;
 
 namespace Jogo_Quiz
 {
@@ -12,74 +13,45 @@ namespace Jogo_Quiz
 			InitializeComponent();
 		}
 
-        private void BtnJogador_Click(object sender, EventArgs e)
-        {
-			// TelaCadastro cadastro = new TelaCadastro();
-			//cadastro.ShowDialog();
-
-			
-
-			using (JogadorDao criarJogador = new JogadorDao(_conexao))
+		public void IniciarJogo()
+		{
+			using (quizContext quizDao = new quizContext())
 			{
-                var jogadorCadastrado = criarJogador.CriarJogador(txtGeral.Text);
-                string mensagem = "";
+				var listaPerguntas = quizDao.Pergunta.ToList().Select(p => p.PerguntaID);
+				IList<int> perguntasSelecionadas = new List<int>();
 
-                if (String.IsNullOrEmpty(txtGeral.Text))
+				Random randon = new Random();
+
+				foreach (var item in listaPerguntas)
 				{
-					if (jogadorCadastrado.JogadorID > 0)
-					{
-						mensagem = $"Jogador: {jogadorCadastrado} cadastrado com sucesso! ";
-					}
-					else
-					{
-						mensagem = $"Erro ao salvar o Jogador: {jogadorCadastrado} ";
-					}
+
+					perguntasSelecionadas.Add(item);
+
+
+
+
+					
 				}
-				Console.WriteLine(mensagem);
 
-                //MessageBox.Show(mensagem);
-            }
-
-			
-
-			
-        }
-
-        private void btnCadastrarPerguntas_Click(object sender, EventArgs e)
-        {
-			Button button = (Button)sender;
+				var perguntaSelecionada = randon.Next(perguntasSelecionadas.Count());
 
 
-			if (true)
-			{
+
+				//var teste = perguntaSelecionada;
+				//Resposta resposta1 = new Resposta();
+				//resposta1.PerguntaID = listaPerguntas[perguntaSelecionada].PerguntaID;
+
+				//Resposta respostas = quizDao.Resposta.ToList();
+
+
+
+
+				//txtPergunta.Text = listaPerguntas[perguntaAleatoria].PerguntaQuiz.ToString();
+
+
+
 
 			}
-            TelaCadastro cadastro = new TelaCadastro();
-            cadastro.ShowDialog();
-
-
-
-
-
-
-   //         using (Context Cadastrar = new Context())
-			//{
-			//	Pergunta pergunta = new Pergunta();
-			//	pergunta.PerguntaQuiz = "";
-			//	//pergunta.nivelID = null;
-			//	pergunta.DataCriacao = DateTime.MinValue;
-			//	pergunta.DataExclusao = null;
-			//	pergunta.DataAlteracao = null;
-
-			//	Cadastrar.SaveChanges();
-			//}
-        }
-
-        private void gdvGridPrincipal_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-
-
-        }
-    }
+		}
+	}
 }

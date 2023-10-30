@@ -18,8 +18,9 @@ namespace Jogo_Quiz
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-
-
+			TelaPrincipal principal = new TelaPrincipal();
+			principal.IniciarJogo();
+			Application.Run(new TelaPrincipal());
 			using (quizContext quizDao = new quizContext())
 			{
 				//Jogador jogador = new Jogador();
