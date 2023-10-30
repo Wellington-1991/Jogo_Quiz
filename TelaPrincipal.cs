@@ -17,7 +17,7 @@ namespace Jogo_Quiz
 		{
 			using (quizContext quizDao = new quizContext())
 			{
-				var listaPerguntas = quizDao.Pergunta.ToList().Select(p => p.PerguntaID);
+				var listaPerguntas = quizDao.Pergunta.ToList();
 				IList<int> perguntasSelecionadas = new List<int>();
 
 				Random randon = new Random();
@@ -25,7 +25,7 @@ namespace Jogo_Quiz
 				foreach (var item in listaPerguntas)
 				{
 
-					perguntasSelecionadas.Add(item);
+					perguntasSelecionadas.Add(item.PerguntaID);
 
 
 
@@ -33,15 +33,8 @@ namespace Jogo_Quiz
 					
 				}
 
-				var perguntaSelecionada = randon.Next(perguntasSelecionadas.Count());
+				//var perguntaSelecionada = randon.Next(0,listaPerguntas);
 
-
-
-				//var teste = perguntaSelecionada;
-				//Resposta resposta1 = new Resposta();
-				//resposta1.PerguntaID = listaPerguntas[perguntaSelecionada].PerguntaID;
-
-				//Resposta respostas = quizDao.Resposta.ToList();
 
 
 
