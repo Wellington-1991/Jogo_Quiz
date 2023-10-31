@@ -31,18 +31,18 @@
 			this.components = new System.ComponentModel.Container();
 			this.contextMenuStrip1 = new ContextMenuStrip(this.components);
 			this.groupBox1 = new GroupBox();
+			this.groupBox2 = new GroupBox();
+			this.cbPrimeiraResposta = new CheckBox();
 			this.lblTerceiraResposta = new Label();
 			this.lblSegundaResposta = new Label();
+			this.cbSegundaResposta = new CheckBox();
 			this.lblPrimeiraResposta = new Label();
 			this.cbTerceiraResposta = new CheckBox();
-			this.cbSegundaResposta = new CheckBox();
-			this.cbPrimeiraResposta = new CheckBox();
-			this.button3 = new Button();
+			this.btnResponder = new Button();
 			this.txtPergunta = new TextBox();
-			this.button4 = new Button();
+			this.btnIniciar = new Button();
 			this.btnCadastrarPerguntas = new Button();
 			this.BtnJogador = new Button();
-			this.groupBox2 = new GroupBox();
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			this.SuspendLayout();
@@ -56,9 +56,9 @@
 			// 
 			this.groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
 			this.groupBox1.Controls.Add(this.groupBox2);
-			this.groupBox1.Controls.Add(this.button3);
+			this.groupBox1.Controls.Add(this.btnResponder);
 			this.groupBox1.Controls.Add(this.txtPergunta);
-			this.groupBox1.Controls.Add(this.button4);
+			this.groupBox1.Controls.Add(this.btnIniciar);
 			this.groupBox1.Controls.Add(this.btnCadastrarPerguntas);
 			this.groupBox1.Controls.Add(this.BtnJogador);
 			this.groupBox1.Location = new Point(0, 0);
@@ -67,6 +67,31 @@
 			this.groupBox1.TabIndex = 11;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Quiz";
+			// 
+			// groupBox2
+			// 
+			this.groupBox2.Controls.Add(this.cbPrimeiraResposta);
+			this.groupBox2.Controls.Add(this.lblTerceiraResposta);
+			this.groupBox2.Controls.Add(this.lblSegundaResposta);
+			this.groupBox2.Controls.Add(this.cbSegundaResposta);
+			this.groupBox2.Controls.Add(this.lblPrimeiraResposta);
+			this.groupBox2.Controls.Add(this.cbTerceiraResposta);
+			this.groupBox2.Location = new Point(93, 128);
+			this.groupBox2.Name = "groupBox2";
+			this.groupBox2.Size = new Size(173, 106);
+			this.groupBox2.TabIndex = 25;
+			this.groupBox2.TabStop = false;
+			this.groupBox2.Text = "RESPOSTAS";
+			// 
+			// cbPrimeiraResposta
+			// 
+			this.cbPrimeiraResposta.AutoSize = true;
+			this.cbPrimeiraResposta.Location = new Point(25, 33);
+			this.cbPrimeiraResposta.Name = "cbPrimeiraResposta";
+			this.cbPrimeiraResposta.Size = new Size(73, 19);
+			this.cbPrimeiraResposta.TabIndex = 19;
+			this.cbPrimeiraResposta.Text = "Resposta";
+			this.cbPrimeiraResposta.UseVisualStyleBackColor = true;
 			// 
 			// lblTerceiraResposta
 			// 
@@ -88,6 +113,16 @@
 			this.lblSegundaResposta.Text = "Resposta";
 			this.lblSegundaResposta.Visible = false;
 			// 
+			// cbSegundaResposta
+			// 
+			this.cbSegundaResposta.AutoSize = true;
+			this.cbSegundaResposta.Location = new Point(25, 56);
+			this.cbSegundaResposta.Name = "cbSegundaResposta";
+			this.cbSegundaResposta.Size = new Size(73, 19);
+			this.cbSegundaResposta.TabIndex = 20;
+			this.cbSegundaResposta.Text = "Resposta";
+			this.cbSegundaResposta.UseVisualStyleBackColor = true;
+			// 
 			// lblPrimeiraResposta
 			// 
 			this.lblPrimeiraResposta.AutoSize = true;
@@ -107,55 +142,34 @@
 			this.cbTerceiraResposta.TabIndex = 21;
 			this.cbTerceiraResposta.Text = "Resposta";
 			this.cbTerceiraResposta.UseVisualStyleBackColor = true;
-			this.cbTerceiraResposta.Click += this.ValidarResposta;
 			// 
-			// cbSegundaResposta
+			// btnResponder
 			// 
-			this.cbSegundaResposta.AutoSize = true;
-			this.cbSegundaResposta.Location = new Point(25, 56);
-			this.cbSegundaResposta.Name = "cbSegundaResposta";
-			this.cbSegundaResposta.Size = new Size(73, 19);
-			this.cbSegundaResposta.TabIndex = 20;
-			this.cbSegundaResposta.Text = "Resposta";
-			this.cbSegundaResposta.UseVisualStyleBackColor = true;
-			this.cbSegundaResposta.Click += this.ValidarResposta;
-			// 
-			// cbPrimeiraResposta
-			// 
-			this.cbPrimeiraResposta.AutoSize = true;
-			this.cbPrimeiraResposta.Location = new Point(25, 33);
-			this.cbPrimeiraResposta.Name = "cbPrimeiraResposta";
-			this.cbPrimeiraResposta.Size = new Size(73, 19);
-			this.cbPrimeiraResposta.TabIndex = 19;
-			this.cbPrimeiraResposta.Text = "Resposta";
-			this.cbPrimeiraResposta.UseVisualStyleBackColor = true;
-			this.cbPrimeiraResposta.Click += this.ValidarResposta;
-			// 
-			// button3
-			// 
-			this.button3.Location = new Point(61, 256);
-			this.button3.Name = "button3";
-			this.button3.Size = new Size(75, 23);
-			this.button3.TabIndex = 12;
-			this.button3.Text = "button3";
-			this.button3.UseVisualStyleBackColor = true;
+			this.btnResponder.Location = new Point(197, 256);
+			this.btnResponder.Name = "btnResponder";
+			this.btnResponder.Size = new Size(83, 23);
+			this.btnResponder.TabIndex = 12;
+			this.btnResponder.Text = "RESPONDER";
+			this.btnResponder.UseVisualStyleBackColor = true;
+			this.btnResponder.Click += this.btnResponder_Click_1;
 			// 
 			// txtPergunta
 			// 
-			this.txtPergunta.Location = new Point(83, 40);
+			this.txtPergunta.Location = new Point(0, 22);
 			this.txtPergunta.Multiline = true;
 			this.txtPergunta.Name = "txtPergunta";
-			this.txtPergunta.Size = new Size(194, 75);
+			this.txtPergunta.Size = new Size(366, 93);
 			this.txtPergunta.TabIndex = 14;
 			// 
-			// button4
+			// btnIniciar
 			// 
-			this.button4.Location = new Point(202, 256);
-			this.button4.Name = "button4";
-			this.button4.Size = new Size(75, 23);
-			this.button4.TabIndex = 13;
-			this.button4.Text = "button4";
-			this.button4.UseVisualStyleBackColor = true;
+			this.btnIniciar.Location = new Point(93, 256);
+			this.btnIniciar.Name = "btnIniciar";
+			this.btnIniciar.Size = new Size(75, 23);
+			this.btnIniciar.TabIndex = 13;
+			this.btnIniciar.Text = "INICIAR";
+			this.btnIniciar.UseVisualStyleBackColor = true;
+			this.btnIniciar.Click += this.btnIniciar_Click;
 			// 
 			// btnCadastrarPerguntas
 			// 
@@ -174,21 +188,6 @@
 			this.BtnJogador.TabIndex = 11;
 			this.BtnJogador.Text = "CriarJogador";
 			this.BtnJogador.UseVisualStyleBackColor = true;
-			// 
-			// groupBox2
-			// 
-			this.groupBox2.Controls.Add(this.cbPrimeiraResposta);
-			this.groupBox2.Controls.Add(this.lblTerceiraResposta);
-			this.groupBox2.Controls.Add(this.lblSegundaResposta);
-			this.groupBox2.Controls.Add(this.cbSegundaResposta);
-			this.groupBox2.Controls.Add(this.lblPrimeiraResposta);
-			this.groupBox2.Controls.Add(this.cbTerceiraResposta);
-			this.groupBox2.Location = new Point(93, 128);
-			this.groupBox2.Name = "groupBox2";
-			this.groupBox2.Size = new Size(173, 106);
-			this.groupBox2.TabIndex = 25;
-			this.groupBox2.TabStop = false;
-			this.groupBox2.Text = "RESPOSTAS";
 			// 
 			// TelaPrincipal
 			// 
@@ -209,7 +208,7 @@
 		private ContextMenuStrip contextMenuStrip1;
 		private GroupBox groupBox1;
 		private Button button3;
-		private Button button4;
+		private Button btnIniciar;
 		private Button btnCadastrarPerguntas;
 		private Button BtnJogador;
 		private TextBox txtPergunta;
@@ -220,5 +219,6 @@
 		private Label lblSegundaResposta;
 		private Label lblPrimeiraResposta;
 		private GroupBox groupBox2;
+		private Button btnResponder;
 	}
 }

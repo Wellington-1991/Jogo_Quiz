@@ -14,22 +14,20 @@ namespace Jogo_Quiz
 		public TelaPrincipal()
 		{
 			InitializeComponent();
-
-			IniciarJogo();
 		}
 
-		public void IniciarJogo()
+		public void ControlarJogo()
 		{
 			using (quizContext quizDao = new quizContext())
 			{
 				IList<int> NaoRepetirPerguntas = new List<int>();
 
 				var listaPerguntas = quizDao.Pergunta.ToList();
-				var respostas = quizDao.Resposta.Where(r => r.PerguntaID == listaPerguntas[0].PerguntaID).ToList();
+				var respostas = quizDao.Resposta.Where(r => r.PerguntaID == listaPerguntas[2].PerguntaID).ToList();
 
-				_perguntaID = listaPerguntas[0].PerguntaID;
+				_perguntaID = listaPerguntas[2].PerguntaID;
 
-				txtPergunta.Text = listaPerguntas[0].PerguntaQuiz;
+				txtPergunta.Text = listaPerguntas[2].PerguntaQuiz;
 
 				cbPrimeiraResposta.Text = respostas[0].RespostaQuiz;
 				cbSegundaResposta.Text = respostas[1].RespostaQuiz;
@@ -40,7 +38,7 @@ namespace Jogo_Quiz
 			}
 		}
 
-		private void ValidarResposta(object sender, EventArgs e)
+		private void btnResponder_Click_1(object sender, EventArgs e)
 		{
 			using (quizContext quizDao = new quizContext())
 			{
@@ -59,13 +57,22 @@ namespace Jogo_Quiz
 					lblSegundaResposta.Text = respostas[1].Verdadeiro == true ? "Correta" : "Errada";
 					lblSegundaResposta.BackColor = respostas[1].Verdadeiro == true ? Color.Green : Color.Red;
 				}
-				else if(cbSegundaResposta.Checked)
+				else if (cbTerceiraResposta.Checked)
 				{
 					lblTerceiraResposta.Visible = true;
 					lblTerceiraResposta.Text = respostas[2].Verdadeiro == true ? "Correta" : "Errada";
 					lblTerceiraResposta.BackColor = respostas[2].Verdadeiro == true ? Color.Green : Color.Red;
 				}
+				else
+				{
+					MessageBox.Show("Escolha uma resposta!");
+				}
 			}
+		}
+
+		private void btnIniciar_Click(object sender, EventArgs e)
+		{
+			ControlarJogo(); 
 		}
 	}
 }
