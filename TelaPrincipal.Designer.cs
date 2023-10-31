@@ -31,11 +31,13 @@
 			this.components = new System.ComponentModel.Container();
 			this.contextMenuStrip1 = new ContextMenuStrip(this.components);
 			this.groupBox1 = new GroupBox();
+			this.label1 = new Label();
 			this.button3 = new Button();
 			this.txtPergunta = new TextBox();
 			this.button4 = new Button();
 			this.btnCadastrarPerguntas = new Button();
 			this.gdvGridResposta = new DataGridView();
+			this.RespostaID = new DataGridViewTextBoxColumn();
 			this.BtnJogador = new Button();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)this.gdvGridResposta).BeginInit();
@@ -49,6 +51,7 @@
 			// groupBox1
 			// 
 			this.groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+			this.groupBox1.Controls.Add(this.label1);
 			this.groupBox1.Controls.Add(this.button3);
 			this.groupBox1.Controls.Add(this.txtPergunta);
 			this.groupBox1.Controls.Add(this.button4);
@@ -61,6 +64,15 @@
 			this.groupBox1.TabIndex = 11;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "groupBox1";
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Location = new Point(30, 61);
+			this.label1.Name = "label1";
+			this.label1.Size = new Size(38, 15);
+			this.label1.TabIndex = 15;
+			this.label1.Text = "label1";
 			// 
 			// button3
 			// 
@@ -98,12 +110,24 @@
 			// 
 			// gdvGridResposta
 			// 
+			this.gdvGridResposta.AllowUserToAddRows = false;
+			this.gdvGridResposta.AllowUserToDeleteRows = false;
+			this.gdvGridResposta.AllowUserToOrderColumns = true;
 			this.gdvGridResposta.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.gdvGridResposta.Location = new Point(88, 88);
+			this.gdvGridResposta.Columns.AddRange(new DataGridViewColumn[] { this.RespostaID });
+			this.gdvGridResposta.Location = new Point(58, 88);
 			this.gdvGridResposta.Name = "gdvGridResposta";
+			this.gdvGridResposta.ReadOnly = true;
 			this.gdvGridResposta.RowTemplate.Height = 25;
-			this.gdvGridResposta.Size = new Size(344, 187);
+			this.gdvGridResposta.Size = new Size(456, 187);
 			this.gdvGridResposta.TabIndex = 12;
+			// 
+			// RespostaID
+			// 
+			this.RespostaID.HeaderText = "Respostas";
+			this.RespostaID.Name = "RespostaID";
+			this.RespostaID.ReadOnly = true;
+			this.RespostaID.Width = 455;
 			// 
 			// BtnJogador
 			// 
@@ -137,5 +161,7 @@
 		private Button BtnJogador;
 		private DataGridView gdvGridResposta;
 		private TextBox txtPergunta;
+		private Label label1;
+		private DataGridViewTextBoxColumn RespostaID;
 	}
 }

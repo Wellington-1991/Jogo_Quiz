@@ -11,6 +11,8 @@ namespace Jogo_Quiz
 		public TelaPrincipal()
 		{
 			InitializeComponent();
+
+			IniciarJogo();
 		}
 
 		public void IniciarJogo()
@@ -18,28 +20,29 @@ namespace Jogo_Quiz
 			using (quizContext quizDao = new quizContext())
 			{
 				var listaPerguntas = quizDao.Pergunta.ToList();
-				IList<int> perguntasSelecionadas = new List<int>();
+				var respostas = quizDao.Resposta.Where(r => r.PerguntaID == listaPerguntas[0].PerguntaID).ToList();
 
 				Random randon = new Random();
 
-				foreach (var item in listaPerguntas)
+				//var perguntaSelecionada = randon.Next(perguntasSelecionadas[0], perguntasSelecionadas[2]);
+
+
+
+
+
+				txtPergunta.Text = listaPerguntas[0].PerguntaQuiz;
+
+
+				var teste = respostas.Select(r => r.RespostaQuiz).ToList();
+
+
+				foreach (var item in teste)
 				{
-
-					perguntasSelecionadas.Add(item.PerguntaID);
-
+					gdvGridResposta.DataSource = item;
 
 
-
-					
 				}
 
-				//var perguntaSelecionada = randon.Next(0,listaPerguntas);
-
-
-
-
-
-				//txtPergunta.Text = listaPerguntas[perguntaAleatoria].PerguntaQuiz.ToString();
 
 
 
