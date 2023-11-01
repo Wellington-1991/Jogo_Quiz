@@ -31,16 +31,20 @@
 			this.components = new System.ComponentModel.Container();
 			this.contextMenuStrip1 = new ContextMenuStrip(this.components);
 			this.groupBox1 = new GroupBox();
-			this.label1 = new Label();
+			this.lblTerceiraResposta = new Label();
+			this.lblSegundaResposta = new Label();
+			this.lblPrimeiraResposta = new Label();
+			this.cbTerceiraResposta = new CheckBox();
+			this.cbSegundaResposta = new CheckBox();
+			this.cbPrimeiraResposta = new CheckBox();
 			this.button3 = new Button();
 			this.txtPergunta = new TextBox();
 			this.button4 = new Button();
 			this.btnCadastrarPerguntas = new Button();
-			this.gdvGridResposta = new DataGridView();
-			this.RespostaID = new DataGridViewTextBoxColumn();
 			this.BtnJogador = new Button();
+			this.groupBox2 = new GroupBox();
 			this.groupBox1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)this.gdvGridResposta).BeginInit();
+			this.groupBox2.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// contextMenuStrip1
@@ -51,32 +55,85 @@
 			// groupBox1
 			// 
 			this.groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-			this.groupBox1.Controls.Add(this.label1);
+			this.groupBox1.Controls.Add(this.groupBox2);
 			this.groupBox1.Controls.Add(this.button3);
 			this.groupBox1.Controls.Add(this.txtPergunta);
 			this.groupBox1.Controls.Add(this.button4);
 			this.groupBox1.Controls.Add(this.btnCadastrarPerguntas);
-			this.groupBox1.Controls.Add(this.gdvGridResposta);
 			this.groupBox1.Controls.Add(this.BtnJogador);
 			this.groupBox1.Location = new Point(0, 0);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new Size(576, 373);
+			this.groupBox1.Size = new Size(366, 323);
 			this.groupBox1.TabIndex = 11;
 			this.groupBox1.TabStop = false;
-			this.groupBox1.Text = "groupBox1";
+			this.groupBox1.Text = "Quiz";
 			// 
-			// label1
+			// lblTerceiraResposta
 			// 
-			this.label1.AutoSize = true;
-			this.label1.Location = new Point(30, 61);
-			this.label1.Name = "label1";
-			this.label1.Size = new Size(38, 15);
-			this.label1.TabIndex = 15;
-			this.label1.Text = "label1";
+			this.lblTerceiraResposta.AutoSize = true;
+			this.lblTerceiraResposta.Location = new Point(104, 81);
+			this.lblTerceiraResposta.Name = "lblTerceiraResposta";
+			this.lblTerceiraResposta.Size = new Size(54, 15);
+			this.lblTerceiraResposta.TabIndex = 24;
+			this.lblTerceiraResposta.Text = "Resposta";
+			this.lblTerceiraResposta.Visible = false;
+			// 
+			// lblSegundaResposta
+			// 
+			this.lblSegundaResposta.AutoSize = true;
+			this.lblSegundaResposta.Location = new Point(104, 56);
+			this.lblSegundaResposta.Name = "lblSegundaResposta";
+			this.lblSegundaResposta.Size = new Size(54, 15);
+			this.lblSegundaResposta.TabIndex = 23;
+			this.lblSegundaResposta.Text = "Resposta";
+			this.lblSegundaResposta.Visible = false;
+			// 
+			// lblPrimeiraResposta
+			// 
+			this.lblPrimeiraResposta.AutoSize = true;
+			this.lblPrimeiraResposta.Location = new Point(104, 33);
+			this.lblPrimeiraResposta.Name = "lblPrimeiraResposta";
+			this.lblPrimeiraResposta.Size = new Size(54, 15);
+			this.lblPrimeiraResposta.TabIndex = 22;
+			this.lblPrimeiraResposta.Text = "Resposta";
+			this.lblPrimeiraResposta.Visible = false;
+			// 
+			// cbTerceiraResposta
+			// 
+			this.cbTerceiraResposta.AutoSize = true;
+			this.cbTerceiraResposta.Location = new Point(25, 81);
+			this.cbTerceiraResposta.Name = "cbTerceiraResposta";
+			this.cbTerceiraResposta.Size = new Size(73, 19);
+			this.cbTerceiraResposta.TabIndex = 21;
+			this.cbTerceiraResposta.Text = "Resposta";
+			this.cbTerceiraResposta.UseVisualStyleBackColor = true;
+			this.cbTerceiraResposta.Click += this.ValidarResposta;
+			// 
+			// cbSegundaResposta
+			// 
+			this.cbSegundaResposta.AutoSize = true;
+			this.cbSegundaResposta.Location = new Point(25, 56);
+			this.cbSegundaResposta.Name = "cbSegundaResposta";
+			this.cbSegundaResposta.Size = new Size(73, 19);
+			this.cbSegundaResposta.TabIndex = 20;
+			this.cbSegundaResposta.Text = "Resposta";
+			this.cbSegundaResposta.UseVisualStyleBackColor = true;
+			this.cbSegundaResposta.Click += this.ValidarResposta;
+			// 
+			// cbPrimeiraResposta
+			// 
+			this.cbPrimeiraResposta.AutoSize = true;
+			this.cbPrimeiraResposta.Location = new Point(25, 33);
+			this.cbPrimeiraResposta.Name = "cbPrimeiraResposta";
+			this.cbPrimeiraResposta.Size = new Size(73, 19);
+			this.cbPrimeiraResposta.TabIndex = 19;
+			this.cbPrimeiraResposta.Text = "Resposta";
+			this.cbPrimeiraResposta.UseVisualStyleBackColor = true;
+			this.cbPrimeiraResposta.Click += this.ValidarResposta;
 			// 
 			// button3
 			// 
-			this.button3.Location = new Point(288, 338);
+			this.button3.Location = new Point(61, 256);
 			this.button3.Name = "button3";
 			this.button3.Size = new Size(75, 23);
 			this.button3.TabIndex = 12;
@@ -85,14 +142,15 @@
 			// 
 			// txtPergunta
 			// 
-			this.txtPergunta.Location = new Point(88, 39);
+			this.txtPergunta.Location = new Point(83, 40);
+			this.txtPergunta.Multiline = true;
 			this.txtPergunta.Name = "txtPergunta";
-			this.txtPergunta.Size = new Size(344, 23);
+			this.txtPergunta.Size = new Size(194, 75);
 			this.txtPergunta.TabIndex = 14;
 			// 
 			// button4
 			// 
-			this.button4.Location = new Point(389, 338);
+			this.button4.Location = new Point(202, 256);
 			this.button4.Name = "button4";
 			this.button4.Size = new Size(75, 23);
 			this.button4.TabIndex = 13;
@@ -101,54 +159,49 @@
 			// 
 			// btnCadastrarPerguntas
 			// 
-			this.btnCadastrarPerguntas.Location = new Point(150, 338);
+			this.btnCadastrarPerguntas.Location = new Point(177, 285);
 			this.btnCadastrarPerguntas.Name = "btnCadastrarPerguntas";
 			this.btnCadastrarPerguntas.Size = new Size(132, 23);
 			this.btnCadastrarPerguntas.TabIndex = 0;
 			this.btnCadastrarPerguntas.Text = "CadastrarPerguntas";
 			this.btnCadastrarPerguntas.UseVisualStyleBackColor = true;
 			// 
-			// gdvGridResposta
-			// 
-			this.gdvGridResposta.AllowUserToAddRows = false;
-			this.gdvGridResposta.AllowUserToDeleteRows = false;
-			this.gdvGridResposta.AllowUserToOrderColumns = true;
-			this.gdvGridResposta.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.gdvGridResposta.Columns.AddRange(new DataGridViewColumn[] { this.RespostaID });
-			this.gdvGridResposta.Location = new Point(58, 88);
-			this.gdvGridResposta.Name = "gdvGridResposta";
-			this.gdvGridResposta.ReadOnly = true;
-			this.gdvGridResposta.RowTemplate.Height = 25;
-			this.gdvGridResposta.Size = new Size(456, 187);
-			this.gdvGridResposta.TabIndex = 12;
-			// 
-			// RespostaID
-			// 
-			this.RespostaID.HeaderText = "Respostas";
-			this.RespostaID.Name = "RespostaID";
-			this.RespostaID.ReadOnly = true;
-			this.RespostaID.Width = 455;
-			// 
 			// BtnJogador
 			// 
-			this.BtnJogador.Location = new Point(12, 338);
+			this.BtnJogador.Location = new Point(39, 285);
 			this.BtnJogador.Name = "BtnJogador";
 			this.BtnJogador.Size = new Size(132, 23);
 			this.BtnJogador.TabIndex = 11;
 			this.BtnJogador.Text = "CriarJogador";
 			this.BtnJogador.UseVisualStyleBackColor = true;
 			// 
+			// groupBox2
+			// 
+			this.groupBox2.Controls.Add(this.cbPrimeiraResposta);
+			this.groupBox2.Controls.Add(this.lblTerceiraResposta);
+			this.groupBox2.Controls.Add(this.lblSegundaResposta);
+			this.groupBox2.Controls.Add(this.cbSegundaResposta);
+			this.groupBox2.Controls.Add(this.lblPrimeiraResposta);
+			this.groupBox2.Controls.Add(this.cbTerceiraResposta);
+			this.groupBox2.Location = new Point(93, 128);
+			this.groupBox2.Name = "groupBox2";
+			this.groupBox2.Size = new Size(173, 106);
+			this.groupBox2.TabIndex = 25;
+			this.groupBox2.TabStop = false;
+			this.groupBox2.Text = "RESPOSTAS";
+			// 
 			// TelaPrincipal
 			// 
 			this.AutoScaleDimensions = new SizeF(7F, 15F);
 			this.AutoScaleMode = AutoScaleMode.Font;
-			this.ClientSize = new Size(573, 373);
+			this.ClientSize = new Size(366, 324);
 			this.Controls.Add(this.groupBox1);
 			this.Name = "TelaPrincipal";
 			this.Text = "Jogo_Quiz";
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)this.gdvGridResposta).EndInit();
+			this.groupBox2.ResumeLayout(false);
+			this.groupBox2.PerformLayout();
 			this.ResumeLayout(false);
 		}
 
@@ -159,9 +212,13 @@
 		private Button button4;
 		private Button btnCadastrarPerguntas;
 		private Button BtnJogador;
-		private DataGridView gdvGridResposta;
 		private TextBox txtPergunta;
-		private Label label1;
-		private DataGridViewTextBoxColumn RespostaID;
+		private CheckBox cbTerceiraResposta;
+		private CheckBox cbSegundaResposta;
+		private CheckBox cbPrimeiraResposta;
+		private Label lblTerceiraResposta;
+		private Label lblSegundaResposta;
+		private Label lblPrimeiraResposta;
+		private GroupBox groupBox2;
 	}
 }
