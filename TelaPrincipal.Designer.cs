@@ -42,7 +42,7 @@
             this.txtPergunta = new System.Windows.Forms.TextBox();
             this.btnIniciar = new System.Windows.Forms.Button();
             this.btnCadastrarPerguntas = new System.Windows.Forms.Button();
-            this.BtnJogador = new System.Windows.Forms.Button();
+            this.btnProximo = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -62,7 +62,7 @@
             this.groupBox1.Controls.Add(this.txtPergunta);
             this.groupBox1.Controls.Add(this.btnIniciar);
             this.groupBox1.Controls.Add(this.btnCadastrarPerguntas);
-            this.groupBox1.Controls.Add(this.BtnJogador);
+            this.groupBox1.Controls.Add(this.btnProximo);
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(366, 323);
@@ -94,6 +94,7 @@
             this.cbPrimeiraResposta.TabIndex = 19;
             this.cbPrimeiraResposta.Text = "Resposta";
             this.cbPrimeiraResposta.UseVisualStyleBackColor = true;
+            this.cbPrimeiraResposta.Click += new System.EventHandler(this.btnResponder_Click);
             // 
             // lblTerceiraResposta
             // 
@@ -124,6 +125,7 @@
             this.cbSegundaResposta.TabIndex = 20;
             this.cbSegundaResposta.Text = "Resposta";
             this.cbSegundaResposta.UseVisualStyleBackColor = true;
+            this.cbSegundaResposta.Click += new System.EventHandler(this.btnResponder_Click);
             // 
             // lblPrimeiraResposta
             // 
@@ -144,6 +146,7 @@
             this.cbTerceiraResposta.TabIndex = 21;
             this.cbTerceiraResposta.Text = "Resposta";
             this.cbTerceiraResposta.UseVisualStyleBackColor = true;
+            this.cbTerceiraResposta.Click += new System.EventHandler(this.btnResponder_Click);
             // 
             // btnResponder
             // 
@@ -171,7 +174,6 @@
             this.btnIniciar.TabIndex = 13;
             this.btnIniciar.Text = "INICIAR";
             this.btnIniciar.UseVisualStyleBackColor = true;
-            this.btnIniciar.Click += new System.EventHandler(this.btnIniciar_Click_1);
             // 
             // btnCadastrarPerguntas
             // 
@@ -182,14 +184,15 @@
             this.btnCadastrarPerguntas.Text = "CadastrarPerguntas";
             this.btnCadastrarPerguntas.UseVisualStyleBackColor = true;
             // 
-            // BtnJogador
+            // btnProximo
             // 
-            this.BtnJogador.Location = new System.Drawing.Point(39, 285);
-            this.BtnJogador.Name = "BtnJogador";
-            this.BtnJogador.Size = new System.Drawing.Size(132, 23);
-            this.BtnJogador.TabIndex = 11;
-            this.BtnJogador.Text = "CriarJogador";
-            this.BtnJogador.UseVisualStyleBackColor = true;
+            this.btnProximo.Location = new System.Drawing.Point(93, 285);
+            this.btnProximo.Name = "btnProximo";
+            this.btnProximo.Size = new System.Drawing.Size(78, 23);
+            this.btnProximo.TabIndex = 11;
+            this.btnProximo.Text = "PRÓXIMO";
+            this.btnProximo.UseVisualStyleBackColor = true;
+            this.btnProximo.Click += new System.EventHandler(this.btnProximo_Click);
             // 
             // TelaPrincipal
             // 
@@ -213,7 +216,7 @@
 		private Button button3;
 		private Button btnIniciar;
 		private Button btnCadastrarPerguntas;
-		private Button BtnJogador;
+		private Button btnProximo;
 		private TextBox txtPergunta;
 		private CheckBox cbTerceiraResposta;
 		private CheckBox cbSegundaResposta;

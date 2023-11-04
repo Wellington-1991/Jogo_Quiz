@@ -10,8 +10,8 @@ namespace Jogo_Quiz.Modal.ContextQuiz
 			optionsBuilder.UseSqlServer("Server=DESKTOP-15CIMC2\\SQLEXPRESS; Initial Catalog=Quiz; Integrated Security=true"); //"Server=DESKTOP-15CIMC2\\SQLEXPRESS; Initial Catalog=Quiz; Integrated Security=true"
 		}
 
-        public DbSet<Pergunta> Pergunta { get; set; }
-        public DbSet<Resposta> Resposta { get; set; }
+        public DbSet<Pergunta>? Pergunta { get; set; }
+        public DbSet<Resposta>? Resposta { get; set; }
 
 	}
 }
