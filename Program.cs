@@ -1,6 +1,5 @@
 using Jogo_Quiz.Modal;
 using Jogo_Quiz.Modal.ContextQuiz;
-using Jogo_Quiz.Modal.Dao;
 using Jogo_Quiz.Modal.Entities;
 using System;
 

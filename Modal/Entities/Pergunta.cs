@@ -12,9 +12,6 @@ namespace Jogo_Quiz.Modal.Entities
 		[MaxLength(255)]
         public string? PerguntaQuiz { get; set; }
 
-        public int NivelID { get; set; }
-        public virtual NivelDificuldade? NivelDificuldade { get; set; }
-
 		public virtual IList<Resposta>? Resposta { get; set; }
 	}
 }

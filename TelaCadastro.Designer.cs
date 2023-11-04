@@ -70,7 +70,6 @@
             this.btnFinalizarCadastroJogador.TabIndex = 2;
             this.btnFinalizarCadastroJogador.Text = "Finalizar Cadastro";
             this.btnFinalizarCadastroJogador.UseVisualStyleBackColor = true;
-            this.btnFinalizarCadastroJogador.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // label3
             // 
@@ -186,7 +185,6 @@
             this.btnFinalizarCadastroPergunta.TabIndex = 2;
             this.btnFinalizarCadastroPergunta.Text = "Finalizar Cadstro";
             this.btnFinalizarCadastroPergunta.UseVisualStyleBackColor = true;
-            this.btnFinalizarCadastroPergunta.Click += new System.EventHandler(this.btnFinalizarCadastroPergunta_Click);
             // 
             // TelaCadastro
             // 
