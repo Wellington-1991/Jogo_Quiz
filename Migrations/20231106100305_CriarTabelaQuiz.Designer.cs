@@ -4,6 +4,7 @@ using Jogo_Quiz.Modal.ContextQuiz;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Jogo_Quiz.Migrations
 {
     [DbContext(typeof(quizContext))]
-    partial class quizContextModelSnapshot : ModelSnapshot
+    [Migration("20231106100305_CriarTabelaQuiz")]
+    partial class CriarTabelaQuiz
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

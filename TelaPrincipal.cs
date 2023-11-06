@@ -7,78 +7,106 @@ namespace Jogo_Quiz
 {
 	public partial class TelaPrincipal : Form
 	{
-        private quizContext _context = new quizContext();
-        private int _contador;
+		private quizContext _context = new quizContext();
+		List<Pergunta> perguntas = new List<Pergunta>();
+		List<Resposta> respostas = new List<Resposta>();
+		private int _contador;
 
-        public TelaPrincipal()
+		public TelaPrincipal()
 		{
 			InitializeComponent();
-        }
 
-		public List<Pergunta> ListarPerguntas()
+			ListarPerguntasRespostas();
+		}
+
+		public void PreecherFormulario()
 		{
-            List<Pergunta> perguntas = new List<Pergunta>();
+			Pergunta pergunta = perguntas.FirstOrDefault();
 
-            using (quizContext quizDao = new quizContext())
+			var pergun = pergunta.Resposta.ToList();
+
+			if (!String.IsNullOrEmpty(pergunta.ToString()))
 			{
-                foreach (Pergunta pergunta in quizDao.Pergunta.ToList())
-                {
-                    perguntas.Add(pergunta);
-                }
-            }
+				txtPergunta.Text = pergunta.PerguntaQuiz;
+				cbPrimeiraResposta.Text = pergunta.Resposta[0].RespostaQuiz;
+				cbSegundaResposta.Text = pergunta.Resposta[1].RespostaQuiz;
+				cbTerceiraResposta.Text = pergunta.Resposta[2].RespostaQuiz;
 
-            return perguntas;
-        }
+				//perguntas.Remove(pergunta);
+			}
+			else
+			{
+				MessageBox.Show("Banco de dados vázio, Insira algumas perguntas por favor!");
+			}
 
-        public void PreencherFormulario()
-        {
-            var perguntas = ListarPerguntas();
-            using (quizContext respostas = new quizContext())
-            {
+		}
 
-            }
+		public void ListarPerguntasRespostas()
+		{
+			using (quizContext quizDao = new quizContext())
+			{
+				foreach (Pergunta pergunta in quizDao.Pergunta.ToList())
+				{
+					perguntas.Add(pergunta);
+				}
+
+				foreach (Resposta resposta in quizDao.Resposta.ToList())
+				{
+					respostas.Add(resposta);
+				}
+			}
+		}
+
+		private void btnResponder_Click(object sender, EventArgs e)
+		{
+			bool botaoClicado = false;
+			if (cbPrimeiraResposta.Checked)
+			{
+				lblPrimeiraResposta.Visible = true;
+				lblPrimeiraResposta.Text = respostas[_contador].Verdadeiro == true ? "Correta" : "Errada";
+				lblPrimeiraResposta.BackColor = respostas[_contador].Verdadeiro == true ? Color.Green : Color.Red;
+				botaoClicado = true;
+			}
+			else if (cbSegundaResposta.Checked)
+			{
+				lblSegundaResposta.Visible = true;
+				lblSegundaResposta.Text = respostas[_contador].Verdadeiro == true ? "Correta" : "Errada";
+				lblSegundaResposta.BackColor = respostas[_contador].Verdadeiro == true ? Color.Green : Color.Red;
+				botaoClicado = true;
+			}
+			else if (cbTerceiraResposta.Checked)
+			{
+				lblTerceiraResposta.Visible = true;
+				lblTerceiraResposta.Text = respostas[_contador].Verdadeiro == true ? "Correta" : "Errada";
+				lblTerceiraResposta.BackColor = respostas[_contador].Verdadeiro == true ? Color.Green : Color.Red;
+				botaoClicado = true;
+			}
+			else
+			{
+				MessageBox.Show("Escolha uma resposta!");
+			}
+
+			if (botaoClicado == true)
+			{
+				//perguntas.Remove(pergunta);
+			}
+		}
+
+		private void btnProximo_Click(object sender, EventArgs e)
+		{
 
 
-            for (int i = 0; i <= perguntas.Count; i++)
-            {
-                txtPergunta.Text = perguntas[i].PerguntaQuiz;
-                cbPrimeiraResposta.Text = "";
-                cbSegundaResposta.Text = "";
-                cbTerceiraResposta.Text = "";
-            }
 
-            
-        }
 
-        private void btnResponder_Click(object sender, EventArgs e)
-        {
-            //if (cbPrimeiraResposta.Checked)
-            //{
-            //    lblPrimeiraResposta.Visible = true;
-            //    lblPrimeiraResposta.Text = respostas[_contador].Verdadeiro == true ? "Correta" : "Errada";
-            //    lblPrimeiraResposta.BackColor = respostas[_contador].Verdadeiro == true ? Color.Green : Color.Red;
-            //}
-            //else if (cbSegundaResposta.Checked)
-            //{
-            //    lblSegundaResposta.Visible = true;
-            //    lblSegundaResposta.Text = respostas[_contador].Verdadeiro == true ? "Correta" : "Errada";
-            //    lblSegundaResposta.BackColor = respostas[_contador].Verdadeiro == true ? Color.Green : Color.Red;
-            //}
-            //else if (cbTerceiraResposta.Checked)
-            //{
-            //    lblTerceiraResposta.Visible = true;
-            //    lblTerceiraResposta.Text = respostas[_contador].Verdadeiro == true ? "Correta" : "Errada";
-            //    lblTerceiraResposta.BackColor = respostas[_contador].Verdadeiro == true ? Color.Green : Color.Red;
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Escolha uma resposta!");
-            //}
-        }
 
-        private void btnProximo_Click(object sender, EventArgs e)
-        {
-           
-        }
-    }
+
+
+			PreecherFormulario();
+		}
+
+		private void btnIniciar_Click(object sender, EventArgs e)
+		{
+			PreecherFormulario();
+		}
+	}
 }
