@@ -31,11 +31,9 @@
 			this.components = new System.ComponentModel.Container();
 			this.contextMenuStrip1 = new ContextMenuStrip(this.components);
 			this.groupBox1 = new GroupBox();
-			this.cbRespostas = new CheckedListBox();
-			this.lblTerceiraResposta = new Label();
-			this.lblSegundaResposta = new Label();
+			this.lbRespostas = new ListBox();
 			this.btnResponder = new Button();
-			this.lblPrimeiraResposta = new Label();
+			this.lblMostrarResposta = new Label();
 			this.txtPergunta = new TextBox();
 			this.btnIniciar = new Button();
 			this.btnCadastrarPerguntas = new Button();
@@ -51,11 +49,9 @@
 			// groupBox1
 			// 
 			this.groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-			this.groupBox1.Controls.Add(this.cbRespostas);
-			this.groupBox1.Controls.Add(this.lblTerceiraResposta);
-			this.groupBox1.Controls.Add(this.lblSegundaResposta);
+			this.groupBox1.Controls.Add(this.lbRespostas);
 			this.groupBox1.Controls.Add(this.btnResponder);
-			this.groupBox1.Controls.Add(this.lblPrimeiraResposta);
+			this.groupBox1.Controls.Add(this.lblMostrarResposta);
 			this.groupBox1.Controls.Add(this.txtPergunta);
 			this.groupBox1.Controls.Add(this.btnIniciar);
 			this.groupBox1.Controls.Add(this.btnCadastrarPerguntas);
@@ -67,36 +63,15 @@
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Quiz";
 			// 
-			// cbRespostas
+			// lbRespostas
 			// 
-			this.cbRespostas.FormattingEnabled = true;
-			this.cbRespostas.Items.AddRange(new object[] { "Resposta", "Resposta", "Resposta" });
-			this.cbRespostas.Location = new Point(93, 130);
-			this.cbRespostas.Name = "cbRespostas";
-			this.cbRespostas.Size = new Size(75, 58);
-			this.cbRespostas.TabIndex = 12;
-			this.cbRespostas.Click += this.checkedListBox1_SelectedIndexChanged;
-			this.cbRespostas.SelectedIndexChanged += this.checkedListBox1_SelectedIndexChanged;
-			// 
-			// lblTerceiraResposta
-			// 
-			this.lblTerceiraResposta.AutoSize = true;
-			this.lblTerceiraResposta.Location = new Point(174, 170);
-			this.lblTerceiraResposta.Name = "lblTerceiraResposta";
-			this.lblTerceiraResposta.Size = new Size(54, 15);
-			this.lblTerceiraResposta.TabIndex = 24;
-			this.lblTerceiraResposta.Text = "Resposta";
-			this.lblTerceiraResposta.Visible = false;
-			// 
-			// lblSegundaResposta
-			// 
-			this.lblSegundaResposta.AutoSize = true;
-			this.lblSegundaResposta.Location = new Point(174, 152);
-			this.lblSegundaResposta.Name = "lblSegundaResposta";
-			this.lblSegundaResposta.Size = new Size(54, 15);
-			this.lblSegundaResposta.TabIndex = 23;
-			this.lblSegundaResposta.Text = "Resposta";
-			this.lblSegundaResposta.Visible = false;
+			this.lbRespostas.FormattingEnabled = true;
+			this.lbRespostas.ItemHeight = 15;
+			this.lbRespostas.Items.AddRange(new object[] { "Resposta", "Resposta", "Resposta" });
+			this.lbRespostas.Location = new Point(93, 164);
+			this.lbRespostas.Name = "lbRespostas";
+			this.lbRespostas.Size = new Size(187, 64);
+			this.lbRespostas.TabIndex = 25;
 			// 
 			// btnResponder
 			// 
@@ -108,19 +83,18 @@
 			this.btnResponder.UseVisualStyleBackColor = true;
 			this.btnResponder.Click += this.btnResponder_Click;
 			// 
-			// lblPrimeiraResposta
+			// lblMostrarResposta
 			// 
-			this.lblPrimeiraResposta.AutoSize = true;
-			this.lblPrimeiraResposta.Location = new Point(174, 133);
-			this.lblPrimeiraResposta.Name = "lblPrimeiraResposta";
-			this.lblPrimeiraResposta.Size = new Size(54, 15);
-			this.lblPrimeiraResposta.TabIndex = 22;
-			this.lblPrimeiraResposta.Text = "Resposta";
-			this.lblPrimeiraResposta.Visible = false;
+			this.lblMostrarResposta.AutoSize = true;
+			this.lblMostrarResposta.Location = new Point(133, 19);
+			this.lblMostrarResposta.Name = "lblMostrarResposta";
+			this.lblMostrarResposta.Size = new Size(87, 15);
+			this.lblMostrarResposta.TabIndex = 22;
+			this.lblMostrarResposta.Text = "INICIE O JOGO!";
 			// 
 			// txtPergunta
 			// 
-			this.txtPergunta.Location = new Point(6, 22);
+			this.txtPergunta.Location = new Point(6, 54);
 			this.txtPergunta.Multiline = true;
 			this.txtPergunta.Name = "txtPergunta";
 			this.txtPergunta.Size = new Size(354, 93);
@@ -177,9 +151,8 @@
 		private Button btnProximo;
 		private TextBox txtPergunta;
 		private Button btnResponder;
-		private CheckedListBox cbRespostas;
-		private Label lblTerceiraResposta;
-		private Label lblSegundaResposta;
 		private Label lblPrimeiraResposta;
+		private ListBox lbRespostas;
+		private Label lblMostrarResposta;
 	}
 }
