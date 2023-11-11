@@ -18,7 +18,6 @@ namespace Jogo_Quiz
 		{
 			InitializeComponent();
 
-			ListarPerguntasRespostas();
 		}
 
 		public void PreecherFormulario()
@@ -51,23 +50,50 @@ namespace Jogo_Quiz
 			}
 			else
 			{
-				//Habilitar o botão para reiniciar o jogo
-				MessageBox.Show("Parabéns, você finalizou o jogo!");
-				lblMostrarResposta.Text = "Parabéns, você finalizou o jogo!";
-			}
-			
+                for (int i = 0; i < _respostasAtuais.Count; i++)
+                {
+                    lbRespostas.Items[i] = "";
+                }
 
+                txtPergunta.Text = "";
+                btnProximo.Enabled = false;
+                btnResponder.Enabled = false;
+                lblMostrarResposta.BackColor = Color.White;
+                lblMostrarResposta.Text = "Parabéns, você finalizou o jogo!";
+			}
 		}
 
-		public void ListarPerguntasRespostas()
+		public bool ListarPerguntasRespostas()
 		{
+			bool conecxaoValida = false;
+
 			using (quizContext quizDao = new quizContext())
 			{
-				foreach (Pergunta pergunta in quizDao.Pergunta.ToList())
+				if (quizDao.Database.CanConnect())
 				{
-					_perguntas.Add(pergunta);
-				}
+                    foreach (Pergunta pergunta in quizDao.Pergunta.ToList())
+                    {
+                        if (pergunta.Excluido == false)
+                        {
+                            _perguntas.Add(pergunta);
+                        }
+                    }
+					conecxaoValida = true;
+                }
+				else
+				{
+					
+                    MessageBox.Show("Erro de conecxão com o banco de dados, verifique se a conectionString está correta!");
+                   
+                }
 			}
+
+			if(_perguntas.Count < 0)
+			{
+                MessageBox.Show("Não Existem perguntas registradas no banco de dados!");
+            }
+
+			return conecxaoValida;
 		}
 
 		private void btnResponder_Click(object sender, EventArgs e)
@@ -76,18 +102,10 @@ namespace Jogo_Quiz
 
 			using (quizContext validarResposta = new quizContext())
 			{
-				var respostaVerdadeira = validarResposta.Resposta.Where(r => r.PerguntaID == _perguntaAtual.PerguntaID && r.Verdadeiro == true).FirstOrDefault().RespostaQuiz;
+				var respostaVerdadeira = validarResposta.Resposta.Where(r => r.PerguntaID == _perguntaAtual.PerguntaID && r.Verdadeiro == true && r.Excluido == false).FirstOrDefault();
 
-				if (respostaVerdadeira == this.lbRespostas.SelectedItem.ToString())
+				if (respostaVerdadeira.RespostaQuiz == this.lbRespostas.SelectedItem.ToString() && respostaVerdadeira.Verdadeiro == true)
 				{
-					foreach (var item in items)
-					{
-						if (item != this.lbRespostas.SelectedItem.ToString())
-						{
-							this.lbRespostas.Text = "----------";
-						}
-					}
-
 					lblMostrarResposta.Text = "Respota correta, parabéns!";
 					lblMostrarResposta.BackColor = Color.Green;
 				}
@@ -101,6 +119,8 @@ namespace Jogo_Quiz
 
 		private void btnProximo_Click(object sender, EventArgs e)
 		{
+			lblMostrarResposta.BackColor = Color.White;
+
 			lblMostrarResposta.Text = "Será que você vai acertar essa?";
 
 			_perguntas.Remove(_perguntaAtual);
@@ -110,7 +130,23 @@ namespace Jogo_Quiz
 
 		private void btnIniciar_Click(object sender, EventArgs e)
 		{
-			PreecherFormulario();
+			btnIniciar.Enabled = false;
+            btnProximo.Enabled = true;
+			btnResponder.Enabled = true;
+
+            if (ListarPerguntasRespostas())
+			{
+				PreecherFormulario();
+			}
+			else
+			{
+				this.Close();
+			}
 		}
-	}
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+			this.Close();
+        }
+    }
 }
