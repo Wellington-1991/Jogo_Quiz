@@ -131,8 +131,6 @@ namespace Jogo_Quiz
 		private void btnIniciar_Click(object sender, EventArgs e)
 		{
 			btnIniciar.Enabled = false;
-            btnProximo.Enabled = true;
-			btnResponder.Enabled = true;
 
             if (ListarPerguntasRespostas())
 			{
@@ -142,6 +140,9 @@ namespace Jogo_Quiz
 			{
 				this.Close();
 			}
+
+			btnProximo.Enabled = true;
+			btnResponder.Enabled = true;
 		}
 
         private void btnSair_Click(object sender, EventArgs e)
