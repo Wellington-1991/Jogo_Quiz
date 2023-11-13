@@ -18,6 +18,12 @@ namespace Jogo_Quiz
 		{
 			InitializeComponent();
 
+			btnIniciar.BackColor = Color.LightGreen;
+			btnSair.BackColor = Color.LightCoral;
+			btnProximo.BackColor = Color.LightYellow;
+			btnResponder.BackColor = Color.LightYellow;
+			//btnIniciar.
+
 		}
 
 		public void PreecherFormulario()
@@ -50,16 +56,16 @@ namespace Jogo_Quiz
 			}
 			else
 			{
-                for (int i = 0; i < _respostasAtuais.Count; i++)
-                {
-                    lbRespostas.Items[i] = "";
-                }
+				for (int i = 0; i < _respostasAtuais.Count; i++)
+				{
+					lbRespostas.Items[i] = "";
+				}
 
-                txtPergunta.Text = "";
-                btnProximo.Enabled = false;
-                btnResponder.Enabled = false;
-                lblMostrarResposta.BackColor = Color.White;
-                lblMostrarResposta.Text = "Parabéns, você finalizou o jogo!";
+				txtPergunta.Text = "";
+				btnProximo.Enabled = false;
+				btnResponder.Enabled = false;
+				lblMostrarResposta.BackColor = Color.White;
+				lblMostrarResposta.Text = "Parabéns, você finalizou o jogo!";
 			}
 		}
 
@@ -71,27 +77,27 @@ namespace Jogo_Quiz
 			{
 				if (quizDao.Database.CanConnect())
 				{
-                    foreach (Pergunta pergunta in quizDao.Pergunta.ToList())
-                    {
-                        if (pergunta.Excluido == false)
-                        {
-                            _perguntas.Add(pergunta);
-                        }
-                    }
+					foreach (Pergunta pergunta in quizDao.Pergunta.ToList())
+					{
+						if (pergunta.Excluido == false)
+						{
+							_perguntas.Add(pergunta);
+						}
+					}
 					conecxaoValida = true;
-                }
+				}
 				else
 				{
-					
-                    MessageBox.Show("Erro de conecxão com o banco de dados, verifique se a conectionString está correta!");
-                   
-                }
+
+					MessageBox.Show("Erro de conecxão com o banco de dados, verifique se a conectionString está correta!");
+
+				}
 			}
 
-			if(_perguntas.Count < 0)
+			if (_perguntas.Count < 0)
 			{
-                MessageBox.Show("Não Existem perguntas registradas no banco de dados!");
-            }
+				MessageBox.Show("Não Existem perguntas registradas no banco de dados!");
+			}
 
 			return conecxaoValida;
 		}
@@ -132,7 +138,7 @@ namespace Jogo_Quiz
 		{
 			btnIniciar.Enabled = false;
 
-            if (ListarPerguntasRespostas())
+			if (ListarPerguntasRespostas())
 			{
 				PreecherFormulario();
 			}
@@ -145,9 +151,9 @@ namespace Jogo_Quiz
 			btnResponder.Enabled = true;
 		}
 
-        private void btnSair_Click(object sender, EventArgs e)
-        {
+		private void btnSair_Click(object sender, EventArgs e)
+		{
 			this.Close();
-        }
-    }
+		}
+	}
 }

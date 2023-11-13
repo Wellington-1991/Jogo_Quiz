@@ -13,7 +13,7 @@
     ],
     "additionalProbingPaths": [
       "C:\\Users\\wellington.rafael\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\Wellington\\.nuget\\packages",
+      "C:\\Users\\wellington.rafael\\.nuget\\packages",
       "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
     ],
     "configProperties": {
