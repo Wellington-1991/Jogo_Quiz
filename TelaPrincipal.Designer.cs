@@ -67,37 +67,43 @@
 			// lbRespostas
 			// 
 			this.lbRespostas.BackColor = SystemColors.ControlLight;
+			this.lbRespostas.Font = new Font("High Tower Text", 9F, FontStyle.Bold, GraphicsUnit.Point);
 			this.lbRespostas.FormattingEnabled = true;
 			this.lbRespostas.ItemHeight = 15;
 			this.lbRespostas.Items.AddRange(new object[] { "Resposta", "Resposta", "Resposta" });
-			this.lbRespostas.Location = new Point(93, 164);
+			this.lbRespostas.Location = new Point(69, 161);
 			this.lbRespostas.Name = "lbRespostas";
-			this.lbRespostas.Size = new Size(187, 64);
+			this.lbRespostas.Size = new Size(201, 64);
 			this.lbRespostas.TabIndex = 25;
 			// 
 			// btnResponder
 			// 
+			this.btnResponder.BackColor = Color.Wheat;
 			this.btnResponder.Enabled = false;
-			this.btnResponder.Location = new Point(197, 237);
+			this.btnResponder.Font = new Font("High Tower Text", 9F, FontStyle.Bold, GraphicsUnit.Point);
+			this.btnResponder.Location = new Point(168, 237);
 			this.btnResponder.Name = "btnResponder";
-			this.btnResponder.Size = new Size(83, 23);
+			this.btnResponder.Size = new Size(102, 23);
 			this.btnResponder.TabIndex = 12;
 			this.btnResponder.Text = "RESPONDER";
-			this.btnResponder.UseVisualStyleBackColor = true;
+			this.btnResponder.UseVisualStyleBackColor = false;
 			this.btnResponder.Click += this.btnResponder_Click;
 			// 
 			// lblMostrarResposta
 			// 
 			this.lblMostrarResposta.AutoSize = true;
-			this.lblMostrarResposta.Location = new Point(111, 19);
+			this.lblMostrarResposta.BackColor = SystemColors.ControlLight;
+			this.lblMostrarResposta.Font = new Font("High Tower Text", 9F, FontStyle.Bold, GraphicsUnit.Point);
+			this.lblMostrarResposta.Location = new Point(74, 19);
 			this.lblMostrarResposta.Name = "lblMostrarResposta";
-			this.lblMostrarResposta.Size = new Size(135, 15);
+			this.lblMostrarResposta.Size = new Size(181, 15);
 			this.lblMostrarResposta.TabIndex = 22;
 			this.lblMostrarResposta.Text = "        INICIE O JOGO!        ";
 			// 
 			// txtPergunta
 			// 
 			this.txtPergunta.BackColor = SystemColors.ControlLight;
+			this.txtPergunta.Font = new Font("High Tower Text", 9F, FontStyle.Bold, GraphicsUnit.Point);
 			this.txtPergunta.Location = new Point(6, 54);
 			this.txtPergunta.Multiline = true;
 			this.txtPergunta.Name = "txtPergunta";
@@ -106,33 +112,39 @@
 			// 
 			// btnIniciar
 			// 
-			this.btnIniciar.Location = new Point(93, 266);
+			this.btnIniciar.BackColor = Color.PaleGreen;
+			this.btnIniciar.Font = new Font("High Tower Text", 9F, FontStyle.Bold, GraphicsUnit.Point);
+			this.btnIniciar.Location = new Point(69, 266);
 			this.btnIniciar.Name = "btnIniciar";
-			this.btnIniciar.Size = new Size(85, 23);
+			this.btnIniciar.Size = new Size(102, 23);
 			this.btnIniciar.TabIndex = 13;
 			this.btnIniciar.Text = "INICIAR";
-			this.btnIniciar.UseVisualStyleBackColor = true;
+			this.btnIniciar.UseVisualStyleBackColor = false;
 			this.btnIniciar.Click += this.btnIniciar_Click;
 			// 
 			// btnSair
 			// 
-			this.btnSair.Location = new Point(197, 266);
+			this.btnSair.BackColor = Color.Salmon;
+			this.btnSair.Font = new Font("High Tower Text", 9F, FontStyle.Bold, GraphicsUnit.Point);
+			this.btnSair.Location = new Point(168, 266);
 			this.btnSair.Name = "btnSair";
-			this.btnSair.Size = new Size(85, 23);
+			this.btnSair.Size = new Size(102, 23);
 			this.btnSair.TabIndex = 0;
 			this.btnSair.Text = "SAIR";
-			this.btnSair.UseVisualStyleBackColor = true;
+			this.btnSair.UseVisualStyleBackColor = false;
 			this.btnSair.Click += this.btnSair_Click;
 			// 
 			// btnProximo
 			// 
+			this.btnProximo.BackColor = Color.Wheat;
 			this.btnProximo.Enabled = false;
-			this.btnProximo.Location = new Point(93, 237);
+			this.btnProximo.Font = new Font("High Tower Text", 9F, FontStyle.Bold, GraphicsUnit.Point);
+			this.btnProximo.Location = new Point(69, 237);
 			this.btnProximo.Name = "btnProximo";
-			this.btnProximo.Size = new Size(85, 23);
+			this.btnProximo.Size = new Size(102, 23);
 			this.btnProximo.TabIndex = 11;
 			this.btnProximo.Text = "PRÓXIMO";
-			this.btnProximo.UseVisualStyleBackColor = true;
+			this.btnProximo.UseVisualStyleBackColor = false;
 			this.btnProximo.Click += this.btnProximo_Click;
 			// 
 			// TelaPrincipal
@@ -142,6 +154,7 @@
 			this.ClientSize = new Size(366, 324);
 			this.Controls.Add(this.groupBox1);
 			this.Name = "TelaPrincipal";
+			this.StartPosition = FormStartPosition.CenterScreen;
 			this.Text = "Jogo_Quiz";
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();

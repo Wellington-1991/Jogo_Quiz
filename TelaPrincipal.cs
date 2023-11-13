@@ -18,12 +18,6 @@ namespace Jogo_Quiz
 		{
 			InitializeComponent();
 
-			btnIniciar.BackColor = Color.LightGreen;
-			btnSair.BackColor = Color.LightCoral;
-			btnProximo.BackColor = Color.LightYellow;
-			btnResponder.BackColor = Color.LightYellow;
-			//btnIniciar.
-
 		}
 
 		public void PreecherFormulario()
