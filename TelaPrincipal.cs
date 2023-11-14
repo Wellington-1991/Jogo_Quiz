@@ -18,7 +18,9 @@ namespace Jogo_Quiz
 		{
 			InitializeComponent();
 
-		}
+            btnIniciar.Focus();
+
+        }
 
 		public void PreecherFormulario()
 		{
@@ -149,5 +151,5 @@ namespace Jogo_Quiz
 		{
 			this.Close();
 		}
-	}
+    }
 }

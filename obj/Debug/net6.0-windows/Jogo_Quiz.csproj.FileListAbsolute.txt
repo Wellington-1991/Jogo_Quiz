@@ -370,7 +370,6 @@ C:\Users\Wellington\Desktop\Jogo_Quiz\bin\Debug\net6.0-windows\runtimes\win-x64\
 C:\Users\Wellington\Desktop\Jogo_Quiz\bin\Debug\net6.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\Wellington\Desktop\Jogo_Quiz\bin\Debug\net6.0-windows\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\Wellington\Desktop\Jogo_Quiz\obj\Debug\net6.0-windows\Jogo_Quiz.csproj.AssemblyReference.cache
-C:\Users\Wellington\Desktop\Jogo_Quiz\obj\Debug\net6.0-windows\Jogo_Quiz.TelaCadastro.resources
 C:\Users\Wellington\Desktop\Jogo_Quiz\obj\Debug\net6.0-windows\Jogo_Quiz.TelaPrincipal.resources
 C:\Users\Wellington\Desktop\Jogo_Quiz\obj\Debug\net6.0-windows\Jogo_Quiz.csproj.GenerateResource.cache
 C:\Users\Wellington\Desktop\Jogo_Quiz\obj\Debug\net6.0-windows\Jogo_Quiz.GeneratedMSBuildEditorConfig.editorconfig
@@ -384,3 +383,4 @@ C:\Users\Wellington\Desktop\Jogo_Quiz\obj\Debug\net6.0-windows\Jogo_Quiz.pdb
 C:\Users\Wellington\Desktop\Jogo_Quiz\obj\Debug\net6.0-windows\Jogo_Quiz.genruntimeconfig.cache
 C:\Users\Wellington\Desktop\Jogo_Quiz\obj\Debug\net6.0-windows\ref\Jogo_Quiz.dll
 C:\Users\wellington.rafael\Documents\Wellington\CURSO_ALURA\Jogo_Quiz\obj\Debug\net6.0-windows\Jogo_Quiz.Properties.Resources.resources
+C:\Users\Wellington\Desktop\Jogo_Quiz\obj\Debug\net6.0-windows\Jogo_Quiz.Properties.Resources.resources
